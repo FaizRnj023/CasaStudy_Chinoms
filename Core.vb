@@ -415,6 +415,7 @@ Public Module UiHelpers
         SetText(f, "lblFeatures", v.Features)
         SetText(f, "lblStarsService", Stars(v.ServiceStars))
         SetText(f, "lblStarsSpaceAndClean", Stars(v.CleanStars))
+        SetText(f, "Label4", "PRICE RANGE")
         LayoutVenueColumns(f)
         LockTextBoxes(f)
     End Sub
