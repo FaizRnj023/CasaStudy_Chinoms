@@ -17,9 +17,6 @@ Public Class CustomerDetails
         cmbEvents.DataSource = VenueData.Events.ToList()
         cmbEvents.SelectedIndex = -1
 
-        ' In the designer this label says "Address:" but it sits above the guest-count box.
-        Label14.Text = "Number of Guests:"
-
         ResetForm()
         HookInputs(pnlCustDetails)
     End Sub
@@ -57,12 +54,12 @@ Public Class CustomerDetails
     End Sub
 
     ' ---------- save ----------
-    Private Sub btnSaveCustomer_Click(sender As Object, e As EventArgs) Handles btnSaveCustomer.Click
-        Dim id As String = txtInCustomerID.Text.Trim()
-        Dim name As String = txtInCustomerName.Text.Trim()
-        Dim address As String = txtInAddress.Text.Trim()
-        Dim mobile As String = txtInMobile.Text.Trim()
-        Dim age As Integer = ComputeAge(dtpBirthday.Value)
+    Private Sub btnSaveCustomer_Click(sender As Object, e As EventArgs)
+        Dim id = txtInCustomerID.Text.Trim
+        Dim name = txtInCustomerName.Text.Trim
+        Dim address = txtInAddress.Text.Trim
+        Dim mobile = txtInMobile.Text.Trim
+        Dim age = ComputeAge(dtpBirthday.Value)
 
         If id = "" Then Warn("Please enter a Customer ID.", txtInCustomerID) : Return
         If name = "" Then Warn("Please enter the customer name.", txtInCustomerName) : Return
@@ -74,8 +71,8 @@ Public Class CustomerDetails
         End If
 
         AppState.Customer = New Customer With {
-            .CustomerID = id, .name = name, .Birthday = dtpBirthday.Value.Date, .age = age,
-            .Gender = If(radFemale.Checked, "Female", "Male"), .address = address, .mobile = mobile}
+            .CustomerID = id, .Name = name, .Birthday = dtpBirthday.Value.Date, .Age = age,
+            .Gender = If(radFemale.Checked, "Female", "Male"), .Address = address, .Mobile = mobile}
 
         txtOutCustomerID.Text = id
         txtOutCustomerName.Text = name
@@ -85,7 +82,7 @@ Public Class CustomerDetails
     End Sub
 
     ' ---------- reset ----------
-    Private Sub btnResetCustomer_Click(sender As Object, e As EventArgs) Handles btnResetCustomer.Click
+    Private Sub btnResetCustomer_Click(sender As Object, e As EventArgs)
         ResetForm()
     End Sub
 
@@ -110,21 +107,21 @@ Public Class CustomerDetails
     End Sub
 
     ' ---------- search venue ----------
-    Private Sub btnSearchVenue_Click(sender As Object, e As EventArgs) Handles btnSearchVenue.Click
+    Private Sub btnSearchVenue_Click(sender As Object, e As EventArgs)
         If AppState.Customer Is Nothing Then
             Warn("Please save the customer details first.", btnSaveCustomer) : Return
         End If
         If cmbEvents.SelectedItem Is Nothing Then Warn("Please choose the type of event.", cmbEvents) : Return
 
         Dim guests As Integer
-        If Not Integer.TryParse(txtInGuestCount.Text.Trim(), guests) OrElse guests < 1 OrElse guests > 5000 Then
+        If Not Integer.TryParse(txtInGuestCount.Text.Trim, guests) OrElse guests < 1 OrElse guests > 5000 Then
             Warn("Please enter a valid number of guests (1 - 5000).", txtInGuestCount) : Return
         End If
 
-        AppState.EventInfo = DirectCast(cmbEvents.SelectedItem, EventType)
+        EventInfo = DirectCast(cmbEvents.SelectedItem, EventType)
         AppState.Guests = guests
-        AppState.EventDate = dtpEventDate.Value.Date
-        Nav.Open(Me, New Form3())
+        EventDate = dtpEventDate.Value.Date
+        Open(Me, New Form3)
     End Sub
 
     Private Sub Warn(message As String, focusOn As Control)

@@ -346,9 +346,6 @@ Public Module UiHelpers
             End If
         Next
 
-        SetText(tlp, "Label26", "Price Rate")      ' was "lblPriceRate" in the designer
-        SetText(tlp, "Label28", "Surcharge")       ' was "lblSurcharge" in the designer
-
         tlp.RowStyles.Clear()
         tlp.RowCount = lines.Count + 1
         For r As Integer = 0 To lines.Count

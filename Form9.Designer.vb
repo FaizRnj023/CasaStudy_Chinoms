@@ -211,7 +211,7 @@ Partial Class Form9
         Label28.Name = "Label28"
         Label28.Size = New Size(140, 26)
         Label28.TabIndex = 12
-        Label28.Text = "lblSurcharge"
+        Label28.Text = "Surcharge"
         ' 
         ' Label26
         ' 
@@ -222,7 +222,7 @@ Partial Class Form9
         Label26.Name = "Label26"
         Label26.Size = New Size(132, 26)
         Label26.TabIndex = 11
-        Label26.Text = "lblPriceRate"
+        Label26.Text = "Price Rate"
         ' 
         ' Label22
         ' 
