@@ -370,6 +370,33 @@ Public Module UiHelpers
         tlp.Controls.Add(lbl, col, row)
     End Sub
 
+    ''' <summary>Lays the Price / Features / Types row out as three equal columns; values wrap inside their column.</summary>
+    Private Sub LayoutVenueColumns(f As Form)
+        Dim pnl As Control = f.Controls.Find("Panel2", True).FirstOrDefault()
+        If pnl Is Nothing Then Return
+
+        Dim heads As String() = {"Label4", "Label7", "Label9"}
+        Dim values As String() = {"lblPricePerPday", "lblFeatures", "lblTypesOfEvents"}
+
+        Dim firstHead As Control = pnl.Controls.Find(heads(0), False).FirstOrDefault()
+        If firstHead Is Nothing Then Return
+
+        Dim margin As Integer = firstHead.Left
+        Dim colW As Integer = (pnl.ClientSize.Width - 4 * margin) \ 3
+
+        For i As Integer = 0 To 2
+            Dim x As Integer = margin + i * (colW + margin)
+            Dim h As Control = pnl.Controls.Find(heads(i), False).FirstOrDefault()
+            Dim v As Label = TryCast(pnl.Controls.Find(values(i), False).FirstOrDefault(), Label)
+            If h IsNot Nothing Then h.Left = x
+            If v IsNot Nothing Then
+                v.Left = x
+                v.AutoSize = True
+                v.MaximumSize = New Size(colW, 0)
+            End If
+        Next
+    End Sub
+
     ''' <summary>Fills the venue-details pages (Form4/5/6 share the same control names).</summary>
     Public Sub PopulateVenue(f As Form, v As Venue)
         SetText(f, "lblVenue", v.Name.ToUpper())
@@ -377,11 +404,12 @@ Public Module UiHelpers
         SetText(f, "txtType", v.VenueType)
         SetText(f, "txtAddress", v.Address)
         SetText(f, "txtMaxCapacity", v.Capacity.ToString() & " pax")
-        SetText(f, "lblPricePerPday", Money(v.Tiers.Min()) & " - " & Money(v.Tiers.Max()) & "  (per 50-pax tier)")
+        SetText(f, "lblPricePerPday", Money(v.Tiers.Min()) & " - " & Money(v.Tiers.Max()) & vbCrLf & "(per 50-pax tier)")
         SetText(f, "lblTypesOfEvents", v.EventTypes)
         SetText(f, "lblFeatures", v.Features)
         SetText(f, "lblStarsService", Stars(v.ServiceStars))
         SetText(f, "lblStarsSpaceAndClean", Stars(v.CleanStars))
+        LayoutVenueColumns(f)
         LockTextBoxes(f)
     End Sub
 
