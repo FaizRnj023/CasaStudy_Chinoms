@@ -258,6 +258,7 @@ Public Module Nav
 
     ''' <summary>Hide the current form and show the next one (owned by the current form).</summary>
     Public Sub Open(current As Form, [next] As Form)
+        FontLoader.Apply([next])
         AddHandler [next].FormClosed, AddressOf OnChildClosed
         current.Hide()
         [next].Show(current)
@@ -363,7 +364,7 @@ Public Module UiHelpers
         Dim lbl As New Label With {
             .AutoSize = True,
             .Text = text,
-            .Font = New Font("Inter Display Medium", 8.0F),
+            .Font = FontLoader.MakeFont("Inter Display Medium", 8.0F),
             .Anchor = AnchorStyles.Left,
             .Margin = New Padding(5)}
         tlp.Controls.Add(lbl, col, row)

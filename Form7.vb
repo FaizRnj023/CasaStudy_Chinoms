@@ -29,7 +29,7 @@ Public Class Form7
             End If
             Dim lbl As New Label With {
                 .Text = priceText, .AutoSize = True, .Anchor = AnchorStyles.Left,
-                .Font = New Font("Inter Display Medium", 8.0F)}
+                .Font = FontLoader.MakeFont("Inter Display Medium", 8.0F)}
 
             AddHandler chk.CheckedChanged, Sub(o, ev)
                                                txt.Enabled = chk.Checked

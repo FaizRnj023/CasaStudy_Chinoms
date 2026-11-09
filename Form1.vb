@@ -2,6 +2,10 @@ Imports System.Net.NetworkInformation
 
 Public Class LandingPage
 
+    Private Sub LandingPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        FontLoader.Apply(Me)
+    End Sub
+
     Private Sub btnBookEventPlace_Click(sender As Object, e As EventArgs) Handles btnBookEventPlace.Click
         AppState.Reset()
         Nav.Open(Me, New CustomerDetails())

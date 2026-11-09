@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+	<ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net10.0-windows</TargetFramework>
     <RootNamespace>CaseStudy_Comprog</RootNamespace>
@@ -11,12 +12,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="1.jpg" />
-    <None Remove="2.jpg" />
-    <None Remove="Cinzel-VariableFont_wght.ttf" />
-    <None Remove="Inter.ttc" />
-    <None Remove="InterVariable-Italic.ttf" />
-    <None Remove="InterVariable.ttf" />
     <None Remove="LogoFavicon.ico" />
   </ItemGroup>
 
@@ -35,22 +30,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Cinzel-VariableFont_wght.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Inter.ttc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="InterVariable-Italic.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="InterVariable.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="LogoFavicon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
+
+    <ItemGroup>
+	    <None Update="Fonts\**">
+		    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    </None>
+    </ItemGroup>
 
   <ItemGroup>
     <Compile Update="My Project\Application.Designer.vb">
