@@ -259,6 +259,7 @@ Public Module Nav
     ''' <summary>Hide the current form and show the next one (owned by the current form).</summary>
     Public Sub Open(current As Form, [next] As Form)
         FontLoader.Apply([next])
+        UiHelpers.StandardizeWindow([next])
         AddHandler [next].FormClosed, AddressOf OnChildClosed
         current.Hide()
         [next].Show(current)
@@ -304,6 +305,13 @@ End Module
 #Region "UI helpers"
 
 Public Module UiHelpers
+
+    ''' <summary>Same window behaviour on every page: fixed size, no maximize, centred on screen.</summary>
+    Public Sub StandardizeWindow(f As Form)
+        f.FormBorderStyle = FormBorderStyle.FixedSingle
+        f.MaximizeBox = False
+        f.StartPosition = FormStartPosition.CenterScreen
+    End Sub
 
     Public Sub SetText(f As Control, name As String, text As String)
         Dim found() As Control = f.Controls.Find(name, True)

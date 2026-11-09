@@ -2,6 +2,11 @@ Imports System.Net.NetworkInformation
 
 Public Class LandingPage
 
+    Public Sub New()
+        InitializeComponent()
+        UiHelpers.StandardizeWindow(Me)
+    End Sub
+
     Private Sub LandingPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         FontLoader.Apply(Me)
     End Sub
