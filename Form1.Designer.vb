@@ -36,7 +36,7 @@ Partial Class LandingPage
         btnViewBooking.FillColor = Color.FromArgb(CByte(251), CByte(247), CByte(240))
         btnViewBooking.FlatAppearance.BorderSize = 0
         btnViewBooking.FlatStyle = FlatStyle.Flat
-        btnViewBooking.Font = New Font("Microsoft Sans Serif", 9F, FontStyle.Bold)
+        btnViewBooking.Font = New Font("Inter Display", 8.0F, FontStyle.Bold)
         btnViewBooking.ForeColor = Color.MidnightBlue
         btnViewBooking.HoverColor = Color.FromArgb(CByte(242), CByte(242), CByte(247))
         btnViewBooking.ImeMode = ImeMode.NoControl
@@ -57,7 +57,7 @@ Partial Class LandingPage
         btnBookEventPlace.FillColor = Color.MidnightBlue
         btnBookEventPlace.FlatAppearance.BorderSize = 0
         btnBookEventPlace.FlatStyle = FlatStyle.Flat
-        btnBookEventPlace.Font = New Font("Microsoft Sans Serif", 9F, FontStyle.Bold)
+        btnBookEventPlace.Font = New Font("Inter Display", 8.0F, FontStyle.Bold)
         btnBookEventPlace.ForeColor = Color.White
         btnBookEventPlace.HoverColor = Color.FromArgb(CByte(45), CByte(45), CByte(140))
         btnBookEventPlace.ImeMode = ImeMode.NoControl

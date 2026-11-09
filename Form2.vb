@@ -6,6 +6,8 @@ Public Class CustomerDetails
     Private Const MinAge As Integer = 18
 
     Private Sub CustomerDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        UiHelpers.CenterInParent(Label10)
+        UiHelpers.CenterInParent(Label13)
         ' The designer default (2 Dec 2026) is in the future, so set values before the limits.
         dtpBirthday.Value = Date.Today
         dtpBirthday.MaxDate = Date.Today

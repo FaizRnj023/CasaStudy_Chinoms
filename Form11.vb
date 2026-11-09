@@ -8,6 +8,7 @@ Public Class Form11
     Private grid As DataGridView
 
     Private Sub Form11_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        UiHelpers.CenterInParent(Label18)
         grid = FindGrid(Me)
         If grid Is Nothing Then
             grid = New DataGridView With {.Location = New Point(50, 190), .Size = New Size(Me.ClientSize.Width - 100, 740)}

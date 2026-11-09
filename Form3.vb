@@ -1,5 +1,12 @@
 ﻿Public Class Form3
 
+    Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        UiHelpers.CenterInParent(Label17)
+        UiHelpers.CenterOver(Label1, picLL)
+        UiHelpers.CenterOver(Label5, picMM)
+        UiHelpers.CenterOver(Label6, picMMJH)
+    End Sub
+
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         Nav.Back(Me)
     End Sub

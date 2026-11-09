@@ -306,6 +306,16 @@ End Module
 
 Public Module UiHelpers
 
+    ''' <summary>Centres a control horizontally inside its parent.</summary>
+    Public Sub CenterInParent(c As Control)
+        c.Left = (c.Parent.ClientSize.Width - c.Width) \ 2
+    End Sub
+
+    ''' <summary>Centres a control horizontally under/over another control with the same parent.</summary>
+    Public Sub CenterOver(c As Control, reference As Control)
+        c.Left = reference.Left + (reference.Width - c.Width) \ 2
+    End Sub
+
     ''' <summary>Same window behaviour on every page: fixed size, no maximize, centred on screen.</summary>
     Public Sub StandardizeWindow(f As Form)
         f.FormBorderStyle = FormBorderStyle.FixedSingle
