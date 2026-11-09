@@ -25,7 +25,6 @@ Partial Class Form6
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form6))
         Panel1 = New Panel()
         picMMJH = New RoundedPictureBox()
-        btnBack = New RoundedButton()
         btnBookVenue = New RoundedButton()
         Label19 = New Label()
         Panel2 = New Panel()
@@ -50,7 +49,7 @@ Partial Class Form6
         Label12 = New Label()
         Label13 = New Label()
         lblVenue = New Label()
-        RoundedButton1 = New RoundedButton()
+        btnBack = New RoundedButton()
         Panel1.SuspendLayout()
         CType(picMMJH, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
@@ -60,7 +59,6 @@ Partial Class Form6
         ' 
         Panel1.BackColor = Color.Transparent
         Panel1.Controls.Add(picMMJH)
-        Panel1.Controls.Add(btnBack)
         Panel1.Controls.Add(btnBookVenue)
         Panel1.Controls.Add(Label19)
         Panel1.Controls.Add(Panel2)
@@ -80,21 +78,6 @@ Partial Class Form6
         resources.ApplyResources(picMMJH, "picMMJH")
         picMMJH.Name = "picMMJH"
         picMMJH.TabStop = False
-        ' 
-        ' btnBack
-        ' 
-        btnBack.BackColor = Color.Transparent
-        btnBack.BorderColor = Color.MidnightBlue
-        btnBack.BorderThickness = 2
-        btnBack.CornerRadius = 12
-        btnBack.FillColor = Color.Transparent
-        btnBack.FlatAppearance.BorderSize = 0
-        resources.ApplyResources(btnBack, "btnBack")
-        btnBack.ForeColor = Color.MidnightBlue
-        btnBack.HoverColor = Color.FromArgb(CByte(242), CByte(242), CByte(247))
-        btnBack.Name = "btnBack"
-        btnBack.PressedColor = Color.FromArgb(CByte(225), CByte(225), CByte(235))
-        btnBack.UseVisualStyleBackColor = False
         ' 
         ' btnBookVenue
         ' 
@@ -261,27 +244,27 @@ Partial Class Form6
         lblVenue.ForeColor = Color.FromArgb(CByte(250), CByte(247), CByte(240))
         lblVenue.Name = "lblVenue"
         ' 
-        ' RoundedButton1
+        ' btnBack
         ' 
-        RoundedButton1.BackColor = Color.FromArgb(CByte(28), CByte(42), CByte(65))
-        RoundedButton1.BorderColor = Color.White
-        RoundedButton1.BorderThickness = 2
-        RoundedButton1.CornerRadius = 12
-        RoundedButton1.FillColor = Color.FromArgb(CByte(28), CByte(42), CByte(65))
-        RoundedButton1.FlatAppearance.BorderSize = 0
-        resources.ApplyResources(RoundedButton1, "RoundedButton1")
-        RoundedButton1.ForeColor = Color.White
-        RoundedButton1.HoverColor = Color.FromArgb(CByte(52), CByte(68), CByte(107))
-        RoundedButton1.Name = "RoundedButton1"
-        RoundedButton1.PressedColor = Color.FromArgb(CByte(20), CByte(28), CByte(48))
-        RoundedButton1.UseVisualStyleBackColor = False
+        btnBack.BackColor = Color.FromArgb(CByte(28), CByte(42), CByte(65))
+        btnBack.BorderColor = Color.White
+        btnBack.BorderThickness = 2
+        btnBack.CornerRadius = 12
+        btnBack.FillColor = Color.FromArgb(CByte(28), CByte(42), CByte(65))
+        btnBack.FlatAppearance.BorderSize = 0
+        resources.ApplyResources(btnBack, "btnBack")
+        btnBack.ForeColor = Color.White
+        btnBack.HoverColor = Color.FromArgb(CByte(52), CByte(68), CByte(107))
+        btnBack.Name = "btnBack"
+        btnBack.PressedColor = Color.FromArgb(CByte(20), CByte(28), CByte(48))
+        btnBack.UseVisualStyleBackColor = False
         ' 
         ' Form6
         ' 
         resources.ApplyResources(Me, "$this")
         AutoScaleMode = AutoScaleMode.Dpi
         BackgroundImage = My.Resources.Resources.BG___Logo_w_Header_room
-        Controls.Add(RoundedButton1)
+        Controls.Add(btnBack)
         Controls.Add(lblVenue)
         Controls.Add(Panel1)
         DoubleBuffered = True
@@ -319,8 +302,7 @@ Partial Class Form6
     Friend WithEvents Label19 As Label
     Friend WithEvents lblStarsSpaceAndClean As Label
     Friend WithEvents lblVenue As Label
-    Friend WithEvents RoundedButton1 As RoundedButton
-    Private btnBack As RoundedButton
+    Friend WithEvents btnBack As RoundedButton
     Friend WithEvents btnBookVenue As RoundedButton
     Friend WithEvents picMMJH As RoundedPictureBox
     Friend WithEvents txtPlaceID As TextBox
