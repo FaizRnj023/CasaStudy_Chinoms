@@ -14,7 +14,7 @@ Public Class Form7
             If row >= tlpAddOnServices.RowCount Then Exit For    ' table has 11 service rows
 
             Dim chk As New CheckBox With {
-                .Text = s.Name, .Tag = s, .AutoSize = True,
+                .Text = s.Name, .Tag = s, .AutoSize = True, .UseMnemonic = False,
                 .Anchor = AnchorStyles.Left, .Margin = New Padding(8, 3, 3, 3)}
 
             Dim txt As New TextBox With {

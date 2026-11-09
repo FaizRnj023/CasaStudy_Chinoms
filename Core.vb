@@ -363,6 +363,7 @@ Public Module UiHelpers
     Private Sub AddCell(tlp As TableLayoutPanel, text As String, col As Integer, row As Integer)
         Dim lbl As New Label With {
             .AutoSize = True,
+            .UseMnemonic = False,
             .Text = text,
             .Font = FontLoader.MakeFont("Inter Display Medium", 8.0F),
             .Anchor = AnchorStyles.Left,

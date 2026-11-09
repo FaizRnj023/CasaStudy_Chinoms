@@ -24,6 +24,7 @@ Public Class Form8
         txtEPDate.Text = b.EventDate.ToString("MMMM d, yyyy")
 
         ' Availed add-on services
+        lblAvailedAOS.UseMnemonic = False
         lblAvailedAOS.MaximumSize = New Size(grpAAOS.Width - 40, 0)
         lblAvailedAOS.AutoSize = True
         If b.Services.Count = 0 Then
