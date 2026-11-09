@@ -277,7 +277,7 @@ Public Module Nav
         If target Is Nothing Then Return
         target.Show()
         For Each f As Form In Application.OpenForms.Cast(Of Form)().ToList()
-            If f IsNot target AndAlso Not TypeOf f Is LandingPage Then f.Close()
+            If f IsNot target AndAlso TypeOf f IsNot LandingPage Then f.Close()
         Next
     End Sub
 

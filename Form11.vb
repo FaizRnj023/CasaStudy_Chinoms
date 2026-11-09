@@ -57,6 +57,8 @@ Public Class Form11
             r.Cells("ViewDetails").Value = "View details"
             r.Cells("TransactionDetails").Value = If(b.Status = "Paid", "View receipt", "Not yet paid")
             r.Cells("Status").Value = b.Status
+            StyleButton(r.Cells("ViewDetails"), True)
+            StyleButton(r.Cells("TransactionDetails"), b.Status = "Paid")
         Next
     End Sub
 
@@ -105,9 +107,34 @@ Public Class Form11
     End Sub
 
     Private Sub EnsureButtonColumn(name As String, header As String)
-        If Not grid.Columns.Contains(name) Then
-            grid.Columns.Add(New DataGridViewButtonColumn With {.Name = name, .HeaderText = header})
+        Dim existing As DataGridViewColumn = Nothing
+        If grid.Columns.Contains(name) Then
+            existing = grid.Columns(name)
+            If TypeOf existing Is DataGridViewButtonColumn Then Return
         End If
+
+        Dim btn As New DataGridViewButtonColumn With {
+        .Name = name,
+        .HeaderText = header,
+        .FlatStyle = FlatStyle.Flat}
+        btn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+
+        If existing IsNot Nothing Then
+            Dim idx As Integer = existing.Index
+            grid.Columns.RemoveAt(idx)
+            grid.Columns.Insert(idx, btn)
+        Else
+            grid.Columns.Add(btn)
+        End If
+    End Sub
+
+    Private Shared Sub StyleButton(cell As DataGridViewCell, active As Boolean)
+        Dim back As Color = If(active, Color.MidnightBlue, Color.Gainsboro)
+        Dim fore As Color = If(active, Color.White, Color.Gray)
+        cell.Style.BackColor = back
+        cell.Style.ForeColor = fore
+        cell.Style.SelectionBackColor = back
+        cell.Style.SelectionForeColor = fore
     End Sub
 
 End Class

@@ -24,7 +24,9 @@ Public Module FontLoader
         For Each f As String In Directory.EnumerateFiles(dir)
             Select Case Path.GetExtension(f).ToLowerInvariant()
                 Case ".ttf", ".otf", ".ttc"
-                    AddFontResourceEx(f, FR_PRIVATE, IntPtr.Zero)   ' for GDI (TextRenderer, TextBox)
+                    If AddFontResourceEx(f, FR_PRIVATE, IntPtr.Zero) = 0 Then
+                        Debug.WriteLine("FontLoader: GDI could not register " & f)
+                    End If
                     Try
                         pfc.AddFontFile(f)                          ' for GDI+ (creating Font objects)
                     Catch ex As Exception
