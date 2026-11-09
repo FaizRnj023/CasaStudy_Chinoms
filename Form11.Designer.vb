@@ -22,7 +22,6 @@ Partial Class Form11
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        btnBack = New RoundedButton()
         Label18 = New Label()
         Label4 = New Label()
         cboFilterStatus = New ComboBox()
@@ -39,68 +38,46 @@ Partial Class Form11
         CType(dgvBookingRecords, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' btnBack
-        ' 
-        btnBack.BackColor = Color.FromArgb(CByte(28), CByte(42), CByte(65))
-        btnBack.BorderColor = Color.White
-        btnBack.BorderThickness = 2
-        btnBack.CornerRadius = 12
-        btnBack.FillColor = Color.FromArgb(CByte(28), CByte(42), CByte(65))
-        btnBack.FlatAppearance.BorderSize = 0
-        btnBack.FlatStyle = FlatStyle.Flat
-        btnBack.Font = New Font("Microsoft Sans Serif", 8F)
-        btnBack.ForeColor = Color.White
-        btnBack.HoverColor = Color.FromArgb(CByte(52), CByte(68), CByte(107))
-        btnBack.ImeMode = ImeMode.NoControl
-        btnBack.Location = New Point(31, 56)
-        btnBack.Margin = New Padding(2, 2, 2, 2)
-        btnBack.Name = "btnBack"
-        btnBack.PressedColor = Color.FromArgb(CByte(20), CByte(28), CByte(48))
-        btnBack.Size = New Size(92, 29)
-        btnBack.TabIndex = 73
-        btnBack.Text = "Back"
-        btnBack.UseVisualStyleBackColor = False
-        ' 
         ' Label18
         ' 
         Label18.AutoSize = True
         Label18.BackColor = Color.Transparent
-        Label18.Font = New Font("Microsoft Sans Serif", 14F)
+        Label18.Font = New Font("Microsoft Sans Serif", 14.0F)
         Label18.ForeColor = Color.FromArgb(CByte(250), CByte(247), CByte(240))
-        Label18.Location = New Point(356, 58)
+        Label18.Location = New Point(570, 93)
+        Label18.Margin = New Padding(5, 0, 5, 0)
         Label18.Name = "Label18"
-        Label18.Size = New Size(250, 29)
+        Label18.Size = New Size(394, 44)
         Label18.TabIndex = 72
         Label18.Text = "BOOKING RECORDS"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Font = New Font("Microsoft Sans Serif", 8F)
-        Label4.Location = New Point(669, 139)
+        Label4.Font = New Font("Microsoft Sans Serif", 8.0F)
+        Label4.Location = New Point(1070, 222)
+        Label4.Margin = New Padding(5, 0, 5, 0)
         Label4.Name = "Label4"
-        Label4.Size = New Size(62, 17)
+        Label4.Size = New Size(95, 26)
         Label4.TabIndex = 75
         Label4.Text = "Filter by:"
         ' 
         ' cboFilterStatus
         ' 
-        cboFilterStatus.Font = New Font("Microsoft Sans Serif", 8F)
+        cboFilterStatus.Font = New Font("Microsoft Sans Serif", 8.0F)
         cboFilterStatus.FormattingEnabled = True
-        cboFilterStatus.Location = New Point(738, 137)
-        cboFilterStatus.Margin = New Padding(2, 2, 2, 2)
+        cboFilterStatus.Location = New Point(1181, 219)
         cboFilterStatus.Name = "cboFilterStatus"
-        cboFilterStatus.Size = New Size(109, 24)
+        cboFilterStatus.Size = New Size(172, 33)
         cboFilterStatus.TabIndex = 76
         ' 
         ' cboFilterYear
         ' 
-        cboFilterYear.Font = New Font("Microsoft Sans Serif", 8F)
+        cboFilterYear.Font = New Font("Microsoft Sans Serif", 8.0F)
         cboFilterYear.FormattingEnabled = True
-        cboFilterYear.Location = New Point(857, 137)
-        cboFilterYear.Margin = New Padding(2, 2, 2, 2)
+        cboFilterYear.Location = New Point(1371, 219)
         cboFilterYear.Name = "cboFilterYear"
-        cboFilterYear.Size = New Size(85, 24)
+        cboFilterYear.Size = New Size(134, 33)
         cboFilterYear.TabIndex = 77
         ' 
         ' dgvBookingRecords
@@ -108,11 +85,10 @@ Partial Class Form11
         dgvBookingRecords.BackgroundColor = SystemColors.Control
         dgvBookingRecords.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         dgvBookingRecords.Columns.AddRange(New DataGridViewColumn() {BookingID, CustomerID, PlaceID, EventDate, ViewDetails, TransactionDetails, Status})
-        dgvBookingRecords.Location = New Point(20, 189)
-        dgvBookingRecords.Margin = New Padding(2, 2, 2, 2)
+        dgvBookingRecords.Location = New Point(32, 302)
         dgvBookingRecords.Name = "dgvBookingRecords"
         dgvBookingRecords.RowHeadersWidth = 82
-        dgvBookingRecords.Size = New Size(932, 406)
+        dgvBookingRecords.Size = New Size(1491, 650)
         dgvBookingRecords.TabIndex = 78
         ' 
         ' BookingID
@@ -166,28 +142,27 @@ Partial Class Form11
         ' 
         ' txtSearchRecords
         ' 
-        txtSearchRecords.Font = New Font("Microsoft Sans Serif", 8F)
-        txtSearchRecords.Location = New Point(31, 137)
-        txtSearchRecords.Margin = New Padding(2, 2, 2, 2)
+        txtSearchRecords.Font = New Font("Microsoft Sans Serif", 8.0F)
+        txtSearchRecords.Location = New Point(50, 219)
         txtSearchRecords.Name = "txtSearchRecords"
         txtSearchRecords.PlaceholderText = "Search Booking or Customer ID"
-        txtSearchRecords.Size = New Size(275, 23)
+        txtSearchRecords.Size = New Size(438, 32)
         txtSearchRecords.TabIndex = 79
         ' 
         ' Form11
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
-        AutoScaleMode = AutoScaleMode.Font
+        AutoScaleDimensions = New SizeF(192.0F, 192.0F)
+        AutoScaleMode = AutoScaleMode.Dpi
         BackgroundImage = My.Resources.Resources.BG___Logo_w_Header_room
         BackgroundImageLayout = ImageLayout.Zoom
-        ClientSize = New Size(975, 618)
+        ClientSize = New Size(1584, 989)
         Controls.Add(txtSearchRecords)
         Controls.Add(dgvBookingRecords)
         Controls.Add(cboFilterYear)
         Controls.Add(cboFilterStatus)
         Controls.Add(Label4)
-        Controls.Add(btnBack)
         Controls.Add(Label18)
+        Margin = New Padding(5, 5, 5, 5)
         Name = "Form11"
         ShowIcon = False
         Text = "ChiNoms Event place"

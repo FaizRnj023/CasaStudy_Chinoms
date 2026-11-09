@@ -40,11 +40,10 @@ Partial Class LandingPage
         btnViewBooking.ForeColor = Color.MidnightBlue
         btnViewBooking.HoverColor = Color.FromArgb(CByte(242), CByte(242), CByte(247))
         btnViewBooking.ImeMode = ImeMode.NoControl
-        btnViewBooking.Location = New Point(262, 452)
-        btnViewBooking.Margin = New Padding(2, 2, 2, 2)
+        btnViewBooking.Location = New Point(419, 723)
         btnViewBooking.Name = "btnViewBooking"
         btnViewBooking.PressedColor = Color.FromArgb(CByte(225), CByte(225), CByte(235))
-        btnViewBooking.Size = New Size(211, 46)
+        btnViewBooking.Size = New Size(338, 74)
         btnViewBooking.TabIndex = 75
         btnViewBooking.Text = "View booking details"
         btnViewBooking.UseVisualStyleBackColor = False
@@ -62,28 +61,28 @@ Partial Class LandingPage
         btnBookEventPlace.ForeColor = Color.White
         btnBookEventPlace.HoverColor = Color.FromArgb(CByte(45), CByte(45), CByte(140))
         btnBookEventPlace.ImeMode = ImeMode.NoControl
-        btnBookEventPlace.Location = New Point(519, 452)
-        btnBookEventPlace.Margin = New Padding(2, 2, 2, 2)
+        btnBookEventPlace.Location = New Point(830, 723)
         btnBookEventPlace.Name = "btnBookEventPlace"
         btnBookEventPlace.PressedColor = Color.FromArgb(CByte(15), CByte(15), CByte(80))
-        btnBookEventPlace.Size = New Size(211, 46)
+        btnBookEventPlace.Size = New Size(338, 74)
         btnBookEventPlace.TabIndex = 74
         btnBookEventPlace.Text = "Book an event place"
         btnBookEventPlace.UseVisualStyleBackColor = False
         ' 
         ' LandingPage
         ' 
-        AutoScaleDimensions = New SizeF(120F, 120F)
+        AutoScaleDimensions = New SizeF(192F, 192F)
         AutoScaleMode = AutoScaleMode.Dpi
         BackColor = SystemColors.Control
         BackgroundImage = My.Resources.Resources.BG___Splash
-        BackgroundImageLayout = ImageLayout.Stretch
-        ClientSize = New Size(990, 618)
+        BackgroundImageLayout = ImageLayout.Zoom
+        ClientSize = New Size(1584, 989)
         Controls.Add(btnViewBooking)
         Controls.Add(btnBookEventPlace)
         DoubleBuffered = True
         ForeColor = Color.DarkCyan
         Icon = CType(resources.GetObject("$this.Icon"), Icon)
+        Margin = New Padding(5, 5, 5, 5)
         Name = "LandingPage"
         ShowIcon = False
         StartPosition = FormStartPosition.CenterScreen

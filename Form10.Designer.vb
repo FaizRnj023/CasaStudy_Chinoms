@@ -411,8 +411,8 @@ Partial Class Form10
         ' 
         ' Form10
         ' 
-        AutoScaleDimensions = New SizeF(13F, 32F)
-        AutoScaleMode = AutoScaleMode.Font
+        AutoScaleDimensions = New SizeF(192.0F, 192.0F)
+        AutoScaleMode = AutoScaleMode.Dpi
         BackgroundImage = My.Resources.Resources.BG___Logo_w_Header_room
         BackgroundImageLayout = ImageLayout.Zoom
         ClientSize = New Size(1584, 989)

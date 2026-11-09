@@ -60,9 +60,10 @@ Partial Class Form3
         Panel1.Controls.Add(btnViewDetailsMM)
         Panel1.Controls.Add(btnViewDetailsLL)
         Panel1.Controls.Add(Label1)
-        Panel1.Location = New Point(6, 119)
+        Panel1.Location = New Point(10, 190)
+        Panel1.Margin = New Padding(5)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(960, 488)
+        Panel1.Size = New Size(1536, 781)
         Panel1.TabIndex = 46
         ' 
         ' picMMJH
@@ -71,10 +72,9 @@ Partial Class Form3
         picMMJH.CornerRadius = 30
         picMMJH.Image = My.Resources.Resources.Hall
         picMMJH.ImeMode = ImeMode.NoControl
-        picMMJH.Location = New Point(657, 41)
-        picMMJH.Margin = New Padding(2)
+        picMMJH.Location = New Point(1051, 66)
         picMMJH.Name = "picMMJH"
-        picMMJH.Size = New Size(276, 246)
+        picMMJH.Size = New Size(442, 394)
         picMMJH.TabIndex = 87
         picMMJH.TabStop = False
         ' 
@@ -84,10 +84,9 @@ Partial Class Form3
         picMM.CornerRadius = 30
         picMM.Image = My.Resources.Resources.Moonbeam_Meadows
         picMM.ImeMode = ImeMode.NoControl
-        picMM.Location = New Point(342, 41)
-        picMM.Margin = New Padding(2)
+        picMM.Location = New Point(547, 66)
         picMM.Name = "picMM"
-        picMM.Size = New Size(276, 246)
+        picMM.Size = New Size(442, 394)
         picMM.TabIndex = 86
         picMM.TabStop = False
         ' 
@@ -95,11 +94,12 @@ Partial Class Form3
         ' 
         Label7.AutoSize = True
         Label7.FlatStyle = FlatStyle.Flat
-        Label7.Font = New Font("Microsoft Sans Serif", 7F, FontStyle.Bold)
+        Label7.Font = New Font("Microsoft Sans Serif", 7.0F, FontStyle.Bold)
         Label7.ForeColor = Color.MidnightBlue
-        Label7.Location = New Point(723, 302)
+        Label7.Location = New Point(1157, 483)
+        Label7.Margin = New Padding(5, 0, 5, 0)
         Label7.Name = "Label7"
-        Label7.Size = New Size(155, 15)
+        Label7.Size = New Size(230, 24)
         Label7.TabIndex = 85
         Label7.Text = "MILESTONE MONOR'S"
         Label7.TextAlign = ContentAlignment.MiddleCenter
@@ -108,11 +108,12 @@ Partial Class Form3
         ' 
         Label3.AutoSize = True
         Label3.FlatStyle = FlatStyle.Flat
-        Label3.Font = New Font("Microsoft Sans Serif", 7F)
+        Label3.Font = New Font("Microsoft Sans Serif", 7.0F)
         Label3.ForeColor = Color.MidnightBlue
-        Label3.Location = New Point(703, 353)
+        Label3.Location = New Point(1125, 565)
+        Label3.Margin = New Padding(5, 0, 5, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(189, 30)
+        Label3.Size = New Size(287, 48)
         Label3.TabIndex = 84
         Label3.Text = "Celebrate beneath a breathtaking" & vbCrLf & "canopy of twinkling fairy lights."
         Label3.TextAlign = ContentAlignment.MiddleCenter
@@ -121,11 +122,12 @@ Partial Class Form3
         ' 
         Label6.AutoSize = True
         Label6.FlatStyle = FlatStyle.Flat
-        Label6.Font = New Font("Microsoft Sans Serif", 11F, FontStyle.Bold)
+        Label6.Font = New Font("Microsoft Sans Serif", 11.0F, FontStyle.Bold)
         Label6.ForeColor = Color.MidnightBlue
-        Label6.Location = New Point(722, 319)
+        Label6.Location = New Point(1155, 510)
+        Label6.Margin = New Padding(5, 0, 5, 0)
         Label6.Name = "Label6"
-        Label6.Size = New Size(148, 24)
+        Label6.Size = New Size(233, 36)
         Label6.TabIndex = 83
         Label6.Text = "JUBILEE HALL"
         Label6.TextAlign = ContentAlignment.MiddleCenter
@@ -134,11 +136,12 @@ Partial Class Form3
         ' 
         Label4.AutoSize = True
         Label4.FlatStyle = FlatStyle.Flat
-        Label4.Font = New Font("Microsoft Sans Serif", 7F)
+        Label4.Font = New Font("Microsoft Sans Serif", 7.0F)
         Label4.ForeColor = Color.MidnightBlue
-        Label4.Location = New Point(375, 347)
+        Label4.Location = New Point(600, 555)
+        Label4.Margin = New Padding(5, 0, 5, 0)
         Label4.Name = "Label4"
-        Label4.Size = New Size(212, 30)
+        Label4.Size = New Size(323, 48)
         Label4.TabIndex = 82
         Label4.Text = "Perfect for tranquil outdoor gatherings" & vbCrLf & "surrounded by nature."
         Label4.TextAlign = ContentAlignment.MiddleCenter
@@ -147,11 +150,12 @@ Partial Class Form3
         ' 
         Label5.AutoSize = True
         Label5.FlatStyle = FlatStyle.Flat
-        Label5.Font = New Font("Microsoft Sans Serif", 11F, FontStyle.Bold)
+        Label5.Font = New Font("Microsoft Sans Serif", 11.0F, FontStyle.Bold)
         Label5.ForeColor = Color.MidnightBlue
-        Label5.Location = New Point(361, 312)
+        Label5.Location = New Point(578, 499)
+        Label5.Margin = New Padding(5, 0, 5, 0)
         Label5.Name = "Label5"
-        Label5.Size = New Size(245, 24)
+        Label5.Size = New Size(374, 36)
         Label5.TabIndex = 81
         Label5.Text = "MOONBEAM MEADOWS"
         Label5.TextAlign = ContentAlignment.MiddleCenter
@@ -160,11 +164,12 @@ Partial Class Form3
         ' 
         Label2.AutoSize = True
         Label2.FlatStyle = FlatStyle.Flat
-        Label2.Font = New Font("Microsoft Sans Serif", 7F)
+        Label2.Font = New Font("Microsoft Sans Serif", 7.0F)
         Label2.ForeColor = Color.MidnightBlue
-        Label2.Location = New Point(63, 347)
+        Label2.Location = New Point(101, 555)
+        Label2.Margin = New Padding(5, 0, 5, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(212, 30)
+        Label2.Size = New Size(329, 48)
         Label2.TabIndex = 80
         Label2.Text = "Set the pulse of your evening with" & vbCrLf & "sleek lighting and chic lounge energy."
         Label2.TextAlign = ContentAlignment.MiddleCenter
@@ -175,10 +180,9 @@ Partial Class Form3
         picLL.CornerRadius = 30
         picLL.Image = My.Resources.Resources.Liquid_Lounge
         picLL.ImeMode = ImeMode.NoControl
-        picLL.Location = New Point(25, 38)
-        picLL.Margin = New Padding(2)
+        picLL.Location = New Point(40, 61)
         picLL.Name = "picLL"
-        picLL.Size = New Size(276, 246)
+        picLL.Size = New Size(442, 394)
         picLL.TabIndex = 79
         picLL.TabStop = False
         ' 
@@ -191,15 +195,14 @@ Partial Class Form3
         btnViewDetailsMMJH.FillColor = Color.Transparent
         btnViewDetailsMMJH.FlatAppearance.BorderSize = 0
         btnViewDetailsMMJH.FlatStyle = FlatStyle.Flat
-        btnViewDetailsMMJH.Font = New Font("Microsoft Sans Serif", 8F, FontStyle.Bold)
+        btnViewDetailsMMJH.Font = New Font("Microsoft Sans Serif", 8.0F, FontStyle.Bold)
         btnViewDetailsMMJH.ForeColor = Color.MidnightBlue
         btnViewDetailsMMJH.HoverColor = Color.FromArgb(CByte(242), CByte(242), CByte(247))
         btnViewDetailsMMJH.ImeMode = ImeMode.NoControl
-        btnViewDetailsMMJH.Location = New Point(721, 403)
-        btnViewDetailsMMJH.Margin = New Padding(2)
+        btnViewDetailsMMJH.Location = New Point(1154, 645)
         btnViewDetailsMMJH.Name = "btnViewDetailsMMJH"
         btnViewDetailsMMJH.PressedColor = Color.FromArgb(CByte(225), CByte(225), CByte(235))
-        btnViewDetailsMMJH.Size = New Size(143, 38)
+        btnViewDetailsMMJH.Size = New Size(229, 61)
         btnViewDetailsMMJH.TabIndex = 78
         btnViewDetailsMMJH.Text = "View details"
         btnViewDetailsMMJH.UseVisualStyleBackColor = False
@@ -213,15 +216,14 @@ Partial Class Form3
         btnViewDetailsMM.FillColor = Color.Transparent
         btnViewDetailsMM.FlatAppearance.BorderSize = 0
         btnViewDetailsMM.FlatStyle = FlatStyle.Flat
-        btnViewDetailsMM.Font = New Font("Microsoft Sans Serif", 8F, FontStyle.Bold)
+        btnViewDetailsMM.Font = New Font("Microsoft Sans Serif", 8.0F, FontStyle.Bold)
         btnViewDetailsMM.ForeColor = Color.MidnightBlue
         btnViewDetailsMM.HoverColor = Color.FromArgb(CByte(242), CByte(242), CByte(247))
         btnViewDetailsMM.ImeMode = ImeMode.NoControl
-        btnViewDetailsMM.Location = New Point(404, 397)
-        btnViewDetailsMM.Margin = New Padding(2)
+        btnViewDetailsMM.Location = New Point(646, 635)
         btnViewDetailsMM.Name = "btnViewDetailsMM"
         btnViewDetailsMM.PressedColor = Color.FromArgb(CByte(225), CByte(225), CByte(235))
-        btnViewDetailsMM.Size = New Size(143, 38)
+        btnViewDetailsMM.Size = New Size(229, 61)
         btnViewDetailsMM.TabIndex = 77
         btnViewDetailsMM.Text = "View details"
         btnViewDetailsMM.UseVisualStyleBackColor = False
@@ -235,15 +237,14 @@ Partial Class Form3
         btnViewDetailsLL.FillColor = Color.Transparent
         btnViewDetailsLL.FlatAppearance.BorderSize = 0
         btnViewDetailsLL.FlatStyle = FlatStyle.Flat
-        btnViewDetailsLL.Font = New Font("Microsoft Sans Serif", 8F, FontStyle.Bold)
+        btnViewDetailsLL.Font = New Font("Microsoft Sans Serif", 8.0F, FontStyle.Bold)
         btnViewDetailsLL.ForeColor = Color.MidnightBlue
         btnViewDetailsLL.HoverColor = Color.FromArgb(CByte(242), CByte(242), CByte(247))
         btnViewDetailsLL.ImeMode = ImeMode.NoControl
-        btnViewDetailsLL.Location = New Point(88, 397)
-        btnViewDetailsLL.Margin = New Padding(2)
+        btnViewDetailsLL.Location = New Point(141, 635)
         btnViewDetailsLL.Name = "btnViewDetailsLL"
         btnViewDetailsLL.PressedColor = Color.FromArgb(CByte(225), CByte(225), CByte(235))
-        btnViewDetailsLL.Size = New Size(143, 38)
+        btnViewDetailsLL.Size = New Size(229, 61)
         btnViewDetailsLL.TabIndex = 76
         btnViewDetailsLL.Text = "View details"
         btnViewDetailsLL.UseVisualStyleBackColor = False
@@ -252,11 +253,12 @@ Partial Class Form3
         ' 
         Label1.AutoSize = True
         Label1.FlatStyle = FlatStyle.Flat
-        Label1.Font = New Font("Microsoft Sans Serif", 11F, FontStyle.Bold)
+        Label1.Font = New Font("Microsoft Sans Serif", 11.0F, FontStyle.Bold)
         Label1.ForeColor = Color.MidnightBlue
-        Label1.Location = New Point(57, 312)
+        Label1.Location = New Point(91, 499)
+        Label1.Margin = New Padding(5, 0, 5, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(214, 24)
+        Label1.Size = New Size(331, 36)
         Label1.TabIndex = 47
         Label1.Text = "THE LIQUID LOUNGE"
         Label1.TextAlign = ContentAlignment.MiddleCenter
@@ -265,11 +267,11 @@ Partial Class Form3
         ' 
         Label17.AutoSize = True
         Label17.BackColor = Color.Transparent
-        Label17.Font = New Font("Microsoft Sans Serif", 14F)
         Label17.ForeColor = Color.FromArgb(CByte(250), CByte(247), CByte(240))
-        Label17.Location = New Point(241, 56)
+        Label17.Location = New Point(386, 90)
+        Label17.Margin = New Padding(5, 0, 5, 0)
         Label17.Name = "Label17"
-        Label17.Size = New Size(479, 29)
+        Label17.Size = New Size(750, 44)
         Label17.TabIndex = 32
         Label17.Text = "CHOOSE THE VENUE FOR YOUR EVENT"
         ' 
@@ -282,31 +284,31 @@ Partial Class Form3
         btnBack.FillColor = Color.FromArgb(CByte(28), CByte(42), CByte(65))
         btnBack.FlatAppearance.BorderSize = 0
         btnBack.FlatStyle = FlatStyle.Flat
-        btnBack.Font = New Font("Microsoft Sans Serif", 8F)
+        btnBack.Font = New Font("Microsoft Sans Serif", 8.0F)
         btnBack.ForeColor = Color.White
         btnBack.HoverColor = Color.FromArgb(CByte(52), CByte(68), CByte(107))
         btnBack.ImeMode = ImeMode.NoControl
-        btnBack.Location = New Point(31, 56)
-        btnBack.Margin = New Padding(2)
+        btnBack.Location = New Point(50, 90)
         btnBack.Name = "btnBack"
         btnBack.PressedColor = Color.FromArgb(CByte(20), CByte(28), CByte(48))
-        btnBack.Size = New Size(92, 29)
+        btnBack.Size = New Size(147, 46)
         btnBack.TabIndex = 68
         btnBack.Text = "Back"
         btnBack.UseVisualStyleBackColor = False
         ' 
         ' Form3
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
-        AutoScaleMode = AutoScaleMode.Font
+        AutoScaleDimensions = New SizeF(192.0F, 192.0F)
+        AutoScaleMode = AutoScaleMode.Dpi
         BackgroundImage = My.Resources.Resources.BG___Logo_w_Header_room
         BackgroundImageLayout = ImageLayout.Zoom
-        ClientSize = New Size(975, 618)
+        ClientSize = New Size(1584, 989)
         Controls.Add(btnBack)
         Controls.Add(Panel1)
         Controls.Add(Label17)
         DoubleBuffered = True
         FormBorderStyle = FormBorderStyle.FixedSingle
+        Margin = New Padding(5)
         Name = "Form3"
         ShowIcon = False
         StartPosition = FormStartPosition.CenterScreen
