@@ -92,19 +92,19 @@ Partial Class CustomerDetails
         dtpBirthday.Margin = New Padding(0)
         dtpBirthday.Name = "dtpBirthday"
         dtpBirthday.Size = New Size(460, 32)
-        dtpBirthday.TabIndex = 0
+        dtpBirthday.TabIndex = 2
         dtpBirthday.Value = New Date(2026, 12, 2, 0, 0, 0, 0)
         ' 
         ' radMale
         ' 
         radMale.AutoSize = True
         radMale.BackColor = Color.Transparent
-        radMale.Font = New Font("Microsoft Sans Serif", 8F)
+        radMale.Font = New Font("Microsoft Sans Serif", 8.0F)
         radMale.Location = New Point(193, 412)
         radMale.Margin = New Padding(5)
         radMale.Name = "radMale"
         radMale.Size = New Size(90, 30)
-        radMale.TabIndex = 19
+        radMale.TabIndex = 5
         radMale.Text = "Male"
         radMale.UseVisualStyleBackColor = False
         ' 
@@ -112,19 +112,19 @@ Partial Class CustomerDetails
         ' 
         radFemale.AutoSize = True
         radFemale.BackColor = Color.Transparent
-        radFemale.Font = New Font("Microsoft Sans Serif", 8F)
+        radFemale.Font = New Font("Microsoft Sans Serif", 8.0F)
         radFemale.Location = New Point(44, 412)
         radFemale.Margin = New Padding(5)
         radFemale.Name = "radFemale"
         radFemale.Size = New Size(116, 30)
-        radFemale.TabIndex = 18
+        radFemale.TabIndex = 4
         radFemale.Text = "Female"
         radFemale.UseVisualStyleBackColor = False
         ' 
         ' Label10
         ' 
         Label10.AutoSize = True
-        Label10.Font = New Font("Microsoft Sans Serif", 10F, FontStyle.Bold)
+        Label10.Font = New Font("Microsoft Sans Serif", 10.0F, FontStyle.Bold)
         Label10.Location = New Point(245, 26)
         Label10.Margin = New Padding(5, 0, 5, 0)
         Label10.Name = "Label10"
@@ -135,7 +135,7 @@ Partial Class CustomerDetails
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Font = New Font("Microsoft Sans Serif", 8F)
+        Label7.Font = New Font("Microsoft Sans Serif", 8.0F)
         Label7.Location = New Point(44, 570)
         Label7.Margin = New Padding(5, 0, 5, 0)
         Label7.Name = "Label7"
@@ -146,7 +146,7 @@ Partial Class CustomerDetails
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Font = New Font("Microsoft Sans Serif", 8F)
+        Label6.Font = New Font("Microsoft Sans Serif", 8.0F)
         Label6.Location = New Point(44, 471)
         Label6.Margin = New Padding(5, 0, 5, 0)
         Label6.Name = "Label6"
@@ -157,7 +157,7 @@ Partial Class CustomerDetails
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Font = New Font("Microsoft Sans Serif", 8F)
+        Label5.Font = New Font("Microsoft Sans Serif", 8.0F)
         Label5.Location = New Point(44, 374)
         Label5.Margin = New Padding(5, 0, 5, 0)
         Label5.Name = "Label5"
@@ -168,7 +168,7 @@ Partial Class CustomerDetails
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Font = New Font("Microsoft Sans Serif", 8F)
+        Label4.Font = New Font("Microsoft Sans Serif", 8.0F)
         Label4.Location = New Point(520, 279)
         Label4.Margin = New Padding(5, 0, 5, 0)
         Label4.Name = "Label4"
@@ -179,7 +179,7 @@ Partial Class CustomerDetails
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("Microsoft Sans Serif", 8F)
+        Label3.Font = New Font("Microsoft Sans Serif", 8.0F)
         Label3.Location = New Point(44, 283)
         Label3.Margin = New Padding(5, 0, 5, 0)
         Label3.Name = "Label3"
@@ -190,7 +190,7 @@ Partial Class CustomerDetails
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("Microsoft Sans Serif", 8F)
+        Label2.Font = New Font("Microsoft Sans Serif", 8.0F)
         Label2.Location = New Point(44, 183)
         Label2.Margin = New Padding(5, 0, 5, 0)
         Label2.Name = "Label2"
@@ -201,7 +201,7 @@ Partial Class CustomerDetails
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Microsoft Sans Serif", 8F)
+        Label1.Font = New Font("Microsoft Sans Serif", 8.0F)
         Label1.Location = New Point(44, 88)
         Label1.Margin = New Padding(5, 0, 5, 0)
         Label1.Name = "Label1"
@@ -211,7 +211,7 @@ Partial Class CustomerDetails
         ' 
         ' txtInMobile
         ' 
-        txtInMobile.Font = New Font("Microsoft Sans Serif", 8F)
+        txtInMobile.Font = New Font("Microsoft Sans Serif", 8.0F)
         txtInMobile.Location = New Point(44, 602)
         txtInMobile.Margin = New Padding(5)
         txtInMobile.Name = "txtInMobile"
@@ -220,7 +220,7 @@ Partial Class CustomerDetails
         ' 
         ' txtInAddress
         ' 
-        txtInAddress.Font = New Font("Microsoft Sans Serif", 8F)
+        txtInAddress.Font = New Font("Microsoft Sans Serif", 8.0F)
         txtInAddress.Location = New Point(44, 504)
         txtInAddress.Margin = New Padding(5)
         txtInAddress.Name = "txtInAddress"
@@ -229,7 +229,7 @@ Partial Class CustomerDetails
         ' 
         ' txtAge
         ' 
-        txtAge.Font = New Font("Microsoft Sans Serif", 8F)
+        txtAge.Font = New Font("Microsoft Sans Serif", 8.0F)
         txtAge.Location = New Point(520, 315)
         txtAge.Margin = New Padding(5)
         txtAge.Name = "txtAge"
@@ -238,7 +238,7 @@ Partial Class CustomerDetails
         ' 
         ' txtInCustomerName
         ' 
-        txtInCustomerName.Font = New Font("Microsoft Sans Serif", 8F)
+        txtInCustomerName.Font = New Font("Microsoft Sans Serif", 8.0F)
         txtInCustomerName.Location = New Point(44, 216)
         txtInCustomerName.Margin = New Padding(5)
         txtInCustomerName.Name = "txtInCustomerName"
@@ -247,7 +247,7 @@ Partial Class CustomerDetails
         ' 
         ' txtInCustomerID
         ' 
-        txtInCustomerID.Font = New Font("Microsoft Sans Serif", 8F)
+        txtInCustomerID.Font = New Font("Microsoft Sans Serif", 8.0F)
         txtInCustomerID.Location = New Point(44, 121)
         txtInCustomerID.Margin = New Padding(5)
         txtInCustomerID.Name = "txtInCustomerID"
@@ -273,8 +273,8 @@ Partial Class CustomerDetails
         ' 
         ' dtpEventDate
         ' 
-        dtpEventDate.CalendarFont = New Font("Microsoft Sans Serif", 8F)
-        dtpEventDate.Font = New Font("Microsoft Sans Serif", 8F)
+        dtpEventDate.CalendarFont = New Font("Microsoft Sans Serif", 8.0F)
+        dtpEventDate.Font = New Font("Microsoft Sans Serif", 8.0F)
         dtpEventDate.Location = New Point(44, 501)
         dtpEventDate.Margin = New Padding(0)
         dtpEventDate.Name = "dtpEventDate"
@@ -284,7 +284,7 @@ Partial Class CustomerDetails
         ' 
         ' pnlCustIDName
         ' 
-        pnlCustIDName.BackColor = Color.FromArgb(CByte(239), CByte(227), CByte(203))
+        pnlCustIDName.BackColor = Color.FromArgb(239, 227, 203)
         pnlCustIDName.Controls.Add(Label9)
         pnlCustIDName.Controls.Add(Label8)
         pnlCustIDName.Controls.Add(txtOutCustomerID)
@@ -297,7 +297,7 @@ Partial Class CustomerDetails
         ' Label9
         ' 
         Label9.AutoSize = True
-        Label9.Font = New Font("Microsoft Sans Serif", 8F)
+        Label9.Font = New Font("Microsoft Sans Serif", 8.0F)
         Label9.Location = New Point(29, 102)
         Label9.Margin = New Padding(5, 0, 5, 0)
         Label9.Name = "Label9"
@@ -308,7 +308,7 @@ Partial Class CustomerDetails
         ' Label8
         ' 
         Label8.AutoSize = True
-        Label8.Font = New Font("Microsoft Sans Serif", 8F)
+        Label8.Font = New Font("Microsoft Sans Serif", 8.0F)
         Label8.Location = New Point(29, 40)
         Label8.Margin = New Padding(5, 0, 5, 0)
         Label8.Name = "Label8"
@@ -318,9 +318,9 @@ Partial Class CustomerDetails
         ' 
         ' txtOutCustomerID
         ' 
-        txtOutCustomerID.BackColor = Color.FromArgb(CByte(239), CByte(227), CByte(203))
+        txtOutCustomerID.BackColor = Color.FromArgb(239, 227, 203)
         txtOutCustomerID.BorderStyle = BorderStyle.None
-        txtOutCustomerID.Font = New Font("Microsoft Sans Serif", 8F)
+        txtOutCustomerID.Font = New Font("Microsoft Sans Serif", 8.0F)
         txtOutCustomerID.Location = New Point(236, 40)
         txtOutCustomerID.Margin = New Padding(5)
         txtOutCustomerID.Name = "txtOutCustomerID"
@@ -329,9 +329,9 @@ Partial Class CustomerDetails
         ' 
         ' txtOutCustomerName
         ' 
-        txtOutCustomerName.BackColor = Color.FromArgb(CByte(239), CByte(227), CByte(203))
+        txtOutCustomerName.BackColor = Color.FromArgb(239, 227, 203)
         txtOutCustomerName.BorderStyle = BorderStyle.None
-        txtOutCustomerName.Font = New Font("Microsoft Sans Serif", 8F)
+        txtOutCustomerName.Font = New Font("Microsoft Sans Serif", 8.0F)
         txtOutCustomerName.Location = New Point(236, 102)
         txtOutCustomerName.Margin = New Padding(5)
         txtOutCustomerName.Name = "txtOutCustomerName"
@@ -374,7 +374,7 @@ Partial Class CustomerDetails
         ' Label13
         ' 
         Label13.AutoSize = True
-        Label13.Font = New Font("Microsoft Sans Serif", 10F, FontStyle.Bold)
+        Label13.Font = New Font("Microsoft Sans Serif", 10.0F, FontStyle.Bold)
         Label13.Location = New Point(225, 26)
         Label13.Margin = New Padding(5, 0, 5, 0)
         Label13.Name = "Label13"
@@ -384,22 +384,22 @@ Partial Class CustomerDetails
         ' 
         ' cmbEvents
         ' 
-        cmbEvents.Font = New Font("Microsoft Sans Serif", 8F)
+        cmbEvents.Font = New Font("Microsoft Sans Serif", 8.0F)
         cmbEvents.FormattingEnabled = True
         cmbEvents.Location = New Point(44, 330)
         cmbEvents.Margin = New Padding(5)
         cmbEvents.Name = "cmbEvents"
         cmbEvents.Size = New Size(682, 33)
-        cmbEvents.TabIndex = 13
+        cmbEvents.TabIndex = 11
         ' 
         ' txtInGuestCount
         ' 
-        txtInGuestCount.Font = New Font("Microsoft Sans Serif", 8F)
+        txtInGuestCount.Font = New Font("Microsoft Sans Serif", 8.0F)
         txtInGuestCount.Location = New Point(44, 415)
         txtInGuestCount.Margin = New Padding(5)
         txtInGuestCount.Name = "txtInGuestCount"
         txtInGuestCount.Size = New Size(682, 32)
-        txtInGuestCount.TabIndex = 12
+        txtInGuestCount.TabIndex = 13
         ' 
         ' CustomerDetails
         ' 
