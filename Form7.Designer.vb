@@ -87,7 +87,7 @@ Partial Class Form7
         Label3.Name = "Label3"
         Label3.Size = New Size(188, 26)
         Label3.TabIndex = 50
-        Label3.Text = "PRICE per 50 pax"
+        Label3.Text = "PRICE PER 50 PAX"
         Label3.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Label2

@@ -42,6 +42,11 @@ Public Class Form7
             rows.Add(Tuple.Create(chk, txt))
             row += 1
         Next
+        ' Trim the table to the rows actually used (header + one per service).
+        For i As Integer = tlpAddOnServices.RowStyles.Count - 1 To row Step -1
+            tlpAddOnServices.RowStyles.RemoveAt(i)
+        Next
+        tlpAddOnServices.RowCount = row
         tlpAddOnServices.ResumeLayout(True)
 
         ' Restore earlier choices if the user came back to this page.
@@ -51,7 +56,9 @@ Public Class Form7
             If prev IsNot Nothing Then
                 r.Item1.Checked = True
                 r.Item2.Text = prev.Instructions
+
             End If
+
         Next
     End Sub
 
