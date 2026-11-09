@@ -349,7 +349,7 @@ Public Module UiHelpers
         tlp.RowStyles.Clear()
         tlp.RowCount = lines.Count + 1
         For r As Integer = 0 To lines.Count
-            tlp.RowStyles.Add(New RowStyle(SizeType.Absolute, 40.0F))
+            tlp.RowStyles.Add(New RowStyle(SizeType.AutoSize))
         Next
         tlp.AutoScroll = True
 
@@ -372,7 +372,7 @@ Public Module UiHelpers
             .Text = text,
             .Font = FontLoader.MakeFont("Inter Display Medium", 8.0F),
             .Anchor = AnchorStyles.Left,
-            .Margin = New Padding(5)}
+            .Margin = New Padding(5, 3, 5, 3)}
         tlp.Controls.Add(lbl, col, row)
     End Sub
 
