@@ -187,7 +187,7 @@ Partial Class Form8
         ' txtEPDate
         ' 
         txtEPDate.Font = New Font("Inter Display Medium", 8F)
-        txtEPDate.Location = New Point(922, 94)
+        txtEPDate.Location = New Point(1014, 94)
         txtEPDate.Margin = New Padding(5)
         txtEPDate.Name = "txtEPDate"
         txtEPDate.Size = New Size(569, 33)
@@ -196,7 +196,7 @@ Partial Class Form8
         ' txtType
         ' 
         txtType.Font = New Font("Inter Display Medium", 8F)
-        txtType.Location = New Point(922, 42)
+        txtType.Location = New Point(1014, 42)
         txtType.Margin = New Padding(5)
         txtType.Name = "txtType"
         txtType.Size = New Size(569, 33)
