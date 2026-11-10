@@ -126,7 +126,7 @@ Partial Class Form8
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Inter Display Medium", 8F)
-        Label3.Location = New Point(802, 48)
+        Label3.Location = New Point(802, 46)
         Label3.Margin = New Padding(5, 0, 5, 0)
         Label3.Name = "Label3"
         Label3.Size = New Size(66, 26)
@@ -137,7 +137,7 @@ Partial Class Form8
         ' 
         Label7.AutoSize = True
         Label7.Font = New Font("Inter Display Medium", 8F)
-        Label7.Location = New Point(18, 48)
+        Label7.Location = New Point(18, 46)
         Label7.Margin = New Padding(5, 0, 5, 0)
         Label7.Name = "Label7"
         Label7.Size = New Size(97, 26)
@@ -148,7 +148,7 @@ Partial Class Form8
         ' 
         Label17.AutoSize = True
         Label17.Font = New Font("Inter Display Medium", 8F)
-        Label17.Location = New Point(16, 101)
+        Label17.Location = New Point(18, 98)
         Label17.Margin = New Padding(5, 0, 5, 0)
         Label17.Name = "Label17"
         Label17.Size = New Size(142, 26)
@@ -159,7 +159,7 @@ Partial Class Form8
         ' 
         Label20.AutoSize = True
         Label20.Font = New Font("Inter Display Medium", 8F)
-        Label20.Location = New Point(802, 101)
+        Label20.Location = New Point(802, 98)
         Label20.Margin = New Padding(5, 0, 5, 0)
         Label20.Name = "Label20"
         Label20.Size = New Size(63, 26)
@@ -187,7 +187,7 @@ Partial Class Form8
         ' txtEPDate
         ' 
         txtEPDate.Font = New Font("Inter Display Medium", 8F)
-        txtEPDate.Location = New Point(922, 96)
+        txtEPDate.Location = New Point(922, 94)
         txtEPDate.Margin = New Padding(5)
         txtEPDate.Name = "txtEPDate"
         txtEPDate.Size = New Size(569, 33)
@@ -239,7 +239,7 @@ Partial Class Form8
         ' 
         Label13.AutoSize = True
         Label13.Font = New Font("Inter Display Medium", 8F)
-        Label13.Location = New Point(802, 48)
+        Label13.Location = New Point(802, 46)
         Label13.Margin = New Padding(5, 0, 5, 0)
         Label13.Name = "Label13"
         Label13.Size = New Size(98, 26)
@@ -250,7 +250,7 @@ Partial Class Form8
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Inter Display Medium", 8F)
-        Label4.Location = New Point(18, 48)
+        Label4.Location = New Point(18, 46)
         Label4.Margin = New Padding(5, 0, 5, 0)
         Label4.Name = "Label4"
         Label4.Size = New Size(138, 26)
@@ -261,7 +261,7 @@ Partial Class Form8
         ' 
         Label5.AutoSize = True
         Label5.Font = New Font("Inter Display Medium", 8F)
-        Label5.Location = New Point(16, 101)
+        Label5.Location = New Point(18, 98)
         Label5.Margin = New Padding(5, 0, 5, 0)
         Label5.Name = "Label5"
         Label5.Size = New Size(177, 26)
@@ -272,7 +272,7 @@ Partial Class Form8
         ' 
         Label6.AutoSize = True
         Label6.Font = New Font("Inter Display Medium", 8F)
-        Label6.Location = New Point(18, 155)
+        Label6.Location = New Point(18, 151)
         Label6.Margin = New Padding(5, 0, 5, 0)
         Label6.Name = "Label6"
         Label6.Size = New Size(116, 26)
@@ -283,7 +283,7 @@ Partial Class Form8
         ' 
         Label12.AutoSize = True
         Label12.Font = New Font("Inter Display Medium", 8F)
-        Label12.Location = New Point(802, 101)
+        Label12.Location = New Point(802, 98)
         Label12.Margin = New Padding(5, 0, 5, 0)
         Label12.Name = "Label12"
         Label12.Size = New Size(124, 26)
@@ -294,7 +294,7 @@ Partial Class Form8
         ' 
         Label11.AutoSize = True
         Label11.Font = New Font("Inter Display Medium", 8F)
-        Label11.Location = New Point(802, 150)
+        Label11.Location = New Point(802, 151)
         Label11.Margin = New Padding(5, 0, 5, 0)
         Label11.Name = "Label11"
         Label11.Size = New Size(194, 26)
@@ -340,7 +340,7 @@ Partial Class Form8
         ' txtEventDate
         ' 
         txtEventDate.Font = New Font("Inter Display Medium", 8F)
-        txtEventDate.Location = New Point(1014, 96)
+        txtEventDate.Location = New Point(1014, 94)
         txtEventDate.Margin = New Padding(5)
         txtEventDate.Name = "txtEventDate"
         txtEventDate.Size = New Size(477, 33)
@@ -410,7 +410,7 @@ Partial Class Form8
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Inter Display Medium", 8F)
-        Label2.Location = New Point(824, 16)
+        Label2.Location = New Point(824, 17)
         Label2.Margin = New Padding(5, 0, 5, 0)
         Label2.Name = "Label2"
         Label2.Size = New Size(182, 26)
@@ -421,7 +421,7 @@ Partial Class Form8
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Inter Display Medium", 8F)
-        Label1.Location = New Point(42, 20)
+        Label1.Location = New Point(42, 17)
         Label1.Margin = New Padding(5, 0, 5, 0)
         Label1.Name = "Label1"
         Label1.Size = New Size(121, 26)
