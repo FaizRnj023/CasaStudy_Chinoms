@@ -429,7 +429,6 @@ Partial Class CustomerDetails
     End Sub
 
     Friend WithEvents pnlCustDetails As Panel
-    Friend WithEvents TextBox3 As TextBox
     Friend WithEvents txtInCustomerName As TextBox
     Friend WithEvents txtInCustomerID As TextBox
     Friend WithEvents pnlEventPlaceDetails As Panel
@@ -459,7 +458,6 @@ Partial Class CustomerDetails
     Friend WithEvents Label7 As Label
     Friend WithEvents dtpBirthday As DateTimePicker
     Friend WithEvents dtpEventDate As DateTimePicker
-    Friend WithEvents ratingTrackBar As TrackBar
     Friend WithEvents btnSearchVenue As RoundedButton
     Private WithEvents btnResetCustomer As RoundedButton
     Friend WithEvents btnSaveCustomer As RoundedButton

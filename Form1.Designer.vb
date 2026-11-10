@@ -89,7 +89,6 @@ Partial Class LandingPage
         Text = "ChiNoms Event place"
         ResumeLayout(False)
     End Sub
-    Friend WithEvents btnBook As Button
     Friend WithEvents btnViewBooking As RoundedButton
     Friend WithEvents btnBookEventPlace As RoundedButton
 

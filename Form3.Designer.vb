@@ -323,8 +323,6 @@ Partial Class Form3
     End Sub
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label17 As Label
-    Friend WithEvents btnViewM As Button
-    Friend WithEvents btnViewDetails_MM As Button
     Friend WithEvents Label1 As Label
     Private WithEvents btnViewDetailsLL As RoundedButton
     Private WithEvents btnViewDetailsMMJH As RoundedButton
