@@ -55,7 +55,7 @@ Public Class CustomerDetails
     End Sub
 
     ' ---------- save ----------
-    Private Sub btnSaveCustomer_Click(sender As Object, e As EventArgs)
+    Private Sub btnSaveCustomer_Click(sender As Object, e As EventArgs) Handles btnSaveCustomer.Click
         Dim id = txtInCustomerID.Text.Trim
         Dim name = txtInCustomerName.Text.Trim
         Dim address = txtInAddress.Text.Trim
@@ -83,7 +83,7 @@ Public Class CustomerDetails
     End Sub
 
     ' ---------- reset ----------
-    Private Sub btnResetCustomer_Click(sender As Object, e As EventArgs)
+    Private Sub btnResetCustomer_Click(sender As Object, e As EventArgs) Handles btnResetCustomer.Click
         ResetForm()
     End Sub
 
@@ -108,7 +108,7 @@ Public Class CustomerDetails
     End Sub
 
     ' ---------- search venue ----------
-    Private Sub btnSearchVenue_Click(sender As Object, e As EventArgs)
+    Private Sub btnSearchVenue_Click(sender As Object, e As EventArgs) Handles btnSearchVenue.Click
         If AppState.Customer Is Nothing Then
             Warn("Please save the customer details first.", btnSaveCustomer) : Return
         End If
