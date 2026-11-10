@@ -122,7 +122,7 @@ Partial Class Form3
         ' 
         Label6.AutoSize = True
         Label6.FlatStyle = FlatStyle.Flat
-        Label6.Font = New Font("Inter Display", 11.0F, FontStyle.Bold)
+        Label6.Font = New Font("Cinzel Black", 11.0F)
         Label6.ForeColor = Color.MidnightBlue
         Label6.Location = New Point(1155, 510)
         Label6.Margin = New Padding(5, 0, 5, 0)
@@ -150,7 +150,7 @@ Partial Class Form3
         ' 
         Label5.AutoSize = True
         Label5.FlatStyle = FlatStyle.Flat
-        Label5.Font = New Font("Inter Display", 11.0F, FontStyle.Bold)
+        Label5.Font = New Font("Cinzel Black", 11.0F)
         Label5.ForeColor = Color.MidnightBlue
         Label5.Location = New Point(578, 499)
         Label5.Margin = New Padding(5, 0, 5, 0)
@@ -253,7 +253,7 @@ Partial Class Form3
         ' 
         Label1.AutoSize = True
         Label1.FlatStyle = FlatStyle.Flat
-        Label1.Font = New Font("Inter Display", 11.0F, FontStyle.Bold)
+        Label1.Font = New Font("Cinzel Black", 11.0F)
         Label1.ForeColor = Color.MidnightBlue
         Label1.Location = New Point(91, 499)
         Label1.Margin = New Padding(5, 0, 5, 0)
@@ -267,6 +267,7 @@ Partial Class Form3
         ' 
         Label17.AutoSize = True
         Label17.BackColor = Color.Transparent
+        Label17.Font = New Font("Cinzel Black", 14.0F)
         Label17.ForeColor = Color.FromArgb(CByte(250), CByte(247), CByte(240))
         Label17.Location = New Point(386, 90)
         Label17.Margin = New Padding(5, 0, 5, 0)

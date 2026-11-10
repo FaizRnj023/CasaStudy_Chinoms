@@ -124,7 +124,7 @@ Partial Class CustomerDetails
         ' Label10
         ' 
         Label10.AutoSize = True
-        Label10.Font = New Font("Inter Display Medium", 10.0F, FontStyle.Bold)
+        Label10.Font = New Font("Cinzel Black", 10.0F)
         Label10.Location = New Point(245, 26)
         Label10.Margin = New Padding(5, 0, 5, 0)
         Label10.Name = "Label10"
@@ -374,7 +374,7 @@ Partial Class CustomerDetails
         ' Label13
         ' 
         Label13.AutoSize = True
-        Label13.Font = New Font("Inter Display Medium", 10.0F, FontStyle.Bold)
+        Label13.Font = New Font("Cinzel Black", 10.0F)
         Label13.Location = New Point(225, 26)
         Label13.Margin = New Padding(5, 0, 5, 0)
         Label13.Name = "Label13"

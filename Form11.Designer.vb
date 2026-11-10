@@ -63,7 +63,7 @@ Partial Class Form11
         ' 
         Label18.AutoSize = True
         Label18.BackColor = Color.Transparent
-        Label18.Font = New Font("Microsoft Sans Serif", 14.0F)
+        Label18.Font = New Font("Cinzel Black", 14.0F)
         Label18.ForeColor = Color.FromArgb(CByte(250), CByte(247), CByte(240))
         Label18.Location = New Point(570, 93)
         Label18.Margin = New Padding(5, 0, 5, 0)
@@ -75,7 +75,7 @@ Partial Class Form11
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Font = New Font("Microsoft Sans Serif", 8.0F)
+        Label4.Font = New Font("Inter Display Medium", 8.0F)
         Label4.Location = New Point(1070, 222)
         Label4.Margin = New Padding(5, 0, 5, 0)
         Label4.Name = "Label4"
@@ -85,7 +85,7 @@ Partial Class Form11
         ' 
         ' cboFilterStatus
         ' 
-        cboFilterStatus.Font = New Font("Microsoft Sans Serif", 8.0F)
+        cboFilterStatus.Font = New Font("Inter Display Medium", 8.0F)
         cboFilterStatus.FormattingEnabled = True
         cboFilterStatus.Location = New Point(1181, 219)
         cboFilterStatus.Name = "cboFilterStatus"
@@ -94,7 +94,7 @@ Partial Class Form11
         ' 
         ' cboFilterYear
         ' 
-        cboFilterYear.Font = New Font("Microsoft Sans Serif", 8.0F)
+        cboFilterYear.Font = New Font("Inter Display Medium", 8.0F)
         cboFilterYear.FormattingEnabled = True
         cboFilterYear.Location = New Point(1371, 219)
         cboFilterYear.Name = "cboFilterYear"
@@ -163,7 +163,7 @@ Partial Class Form11
         ' 
         ' txtSearchRecords
         ' 
-        txtSearchRecords.Font = New Font("Microsoft Sans Serif", 8.0F)
+        txtSearchRecords.Font = New Font("Inter Display Medium", 8.0F)
         txtSearchRecords.Location = New Point(50, 219)
         txtSearchRecords.Name = "txtSearchRecords"
         txtSearchRecords.PlaceholderText = "Search Booking or Customer ID"
