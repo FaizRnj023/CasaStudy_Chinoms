@@ -20,8 +20,9 @@ Partial Class Form11
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        btnBack = New RoundedButton()
         Label18 = New Label()
         Label4 = New Label()
         cboFilterStatus = New ComboBox()
@@ -37,6 +38,26 @@ Partial Class Form11
         txtSearchRecords = New TextBox()
         CType(dgvBookingRecords, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
+        ' 
+        ' btnBack
+        ' 
+        btnBack.BackColor = Color.FromArgb(CByte(28), CByte(42), CByte(65))
+        btnBack.BorderColor = Color.White
+        btnBack.BorderThickness = 2
+        btnBack.CornerRadius = 12
+        btnBack.FillColor = Color.FromArgb(CByte(28), CByte(42), CByte(65))
+        btnBack.FlatAppearance.BorderSize = 0
+        btnBack.FlatStyle = FlatStyle.Flat
+        btnBack.Font = New Font("Inter Display Medium", 8.0F)
+        btnBack.ForeColor = Color.White
+        btnBack.HoverColor = Color.FromArgb(CByte(52), CByte(68), CByte(107))
+        btnBack.Location = New Point(50, 90)
+        btnBack.Name = "btnBack"
+        btnBack.PressedColor = Color.FromArgb(CByte(20), CByte(28), CByte(48))
+        btnBack.Size = New Size(150, 47)
+        btnBack.TabIndex = 73
+        btnBack.Text = "Back"
+        btnBack.UseVisualStyleBackColor = False
         ' 
         ' Label18
         ' 
@@ -156,6 +177,7 @@ Partial Class Form11
         BackgroundImage = My.Resources.Resources.BG___Logo_w_Header_room
         BackgroundImageLayout = ImageLayout.Zoom
         ClientSize = New Size(1584, 989)
+        Controls.Add(btnBack)
         Controls.Add(txtSearchRecords)
         Controls.Add(dgvBookingRecords)
         Controls.Add(cboFilterYear)
