@@ -340,19 +340,19 @@ Partial Class Form9
         ' txtEventDate
         ' 
         txtEventDate.Font = New Font("Inter Display Medium", 8F)
-        txtEventDate.Location = New Point(982, 96)
+        txtEventDate.Location = New Point(1014, 94)
         txtEventDate.Margin = New Padding(5)
         txtEventDate.Name = "txtEventDate"
-        txtEventDate.Size = New Size(509, 33)
+        txtEventDate.Size = New Size(477, 33)
         txtEventDate.TabIndex = 25
         ' 
         ' txtEventID
         ' 
         txtEventID.Font = New Font("Inter Display Medium", 8F)
-        txtEventID.Location = New Point(982, 42)
+        txtEventID.Location = New Point(1014, 42)
         txtEventID.Margin = New Padding(5)
         txtEventID.Name = "txtEventID"
-        txtEventID.Size = New Size(509, 33)
+        txtEventID.Size = New Size(477, 33)
         txtEventID.TabIndex = 24
         ' 
         ' btnProceedToBilling

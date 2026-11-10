@@ -268,7 +268,7 @@ Partial Class Form10
         ' 
         Label23.AutoSize = True
         Label23.Font = New Font("Inter Display Medium", 8F)
-        Label23.Location = New Point(802, 48)
+        Label23.Location = New Point(802, 46)
         Label23.Margin = New Padding(5, 0, 5, 0)
         Label23.Name = "Label23"
         Label23.Size = New Size(138, 26)
@@ -279,7 +279,7 @@ Partial Class Form10
         ' 
         Label24.AutoSize = True
         Label24.Font = New Font("Inter Display Medium", 8F)
-        Label24.Location = New Point(18, 48)
+        Label24.Location = New Point(18, 46)
         Label24.Margin = New Padding(5, 0, 5, 0)
         Label24.Name = "Label24"
         Label24.Size = New Size(138, 26)
@@ -290,7 +290,7 @@ Partial Class Form10
         ' 
         Label25.AutoSize = True
         Label25.Font = New Font("Inter Display Medium", 8F)
-        Label25.Location = New Point(16, 101)
+        Label25.Location = New Point(18, 98)
         Label25.Margin = New Padding(5, 0, 5, 0)
         Label25.Name = "Label25"
         Label25.Size = New Size(177, 26)
@@ -301,7 +301,7 @@ Partial Class Form10
         ' 
         Label27.AutoSize = True
         Label27.Font = New Font("Inter Display Medium", 8F)
-        Label27.Location = New Point(802, 101)
+        Label27.Location = New Point(802, 98)
         Label27.Margin = New Padding(5, 0, 5, 0)
         Label27.Name = "Label27"
         Label27.Size = New Size(124, 26)
@@ -329,19 +329,19 @@ Partial Class Form10
         ' txtEventDate
         ' 
         txtEventDate.Font = New Font("Inter Display Medium", 8F)
-        txtEventDate.Location = New Point(982, 96)
+        txtEventDate.Location = New Point(1014, 94)
         txtEventDate.Margin = New Padding(5)
         txtEventDate.Name = "txtEventDate"
-        txtEventDate.Size = New Size(509, 33)
+        txtEventDate.Size = New Size(477, 33)
         txtEventDate.TabIndex = 25
         ' 
         ' txtEventID
         ' 
         txtEventID.Font = New Font("Inter Display Medium", 8F)
-        txtEventID.Location = New Point(982, 42)
+        txtEventID.Location = New Point(1014, 42)
         txtEventID.Margin = New Padding(5)
         txtEventID.Name = "txtEventID"
-        txtEventID.Size = New Size(509, 33)
+        txtEventID.Size = New Size(477, 33)
         txtEventID.TabIndex = 24
         ' 
         ' txtTransactionDate
