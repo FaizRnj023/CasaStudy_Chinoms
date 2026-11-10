@@ -163,7 +163,7 @@ Partial Class CustomerDetails
         Label5.Name = "Label5"
         Label5.Size = New Size(84, 26)
         Label5.TabIndex = 14
-        Label5.Text = "Gender"
+        Label5.Text = "Gender:"
         ' 
         ' Label4
         ' 
@@ -314,7 +314,7 @@ Partial Class CustomerDetails
         Label8.Name = "Label8"
         Label8.Size = New Size(181, 26)
         Label8.TabIndex = 20
-        Label8.Text = "Customer ID No.:"
+        Label8.Text = "Customer ID:"
         ' 
         ' txtOutCustomerID
         ' 
