@@ -17,13 +17,7 @@
     <Compile Update="Form3.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form4.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Form5.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Form6.vb">
+    <Compile Update="Form456_VenueDetails.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Form7.vb">
@@ -43,9 +37,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Update="Form5.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Update="My Project\Resources.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>

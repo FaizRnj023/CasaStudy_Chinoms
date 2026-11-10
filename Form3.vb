@@ -12,15 +12,15 @@
     End Sub
 
     Private Sub btnViewDetailsLL_Click(sender As Object, e As EventArgs) Handles btnViewDetailsLL.Click
-        Nav.Open(Me, New Form4())
+        Nav.Open(Me, New Form456_VenueDetails("LL01"))
     End Sub
 
     Private Sub btnViewDetailsMM_Click(sender As Object, e As EventArgs) Handles btnViewDetailsMM.Click
-        Nav.Open(Me, New Form5())
+        Nav.Open(Me, New Form456_VenueDetails("MM01"))
     End Sub
 
     Private Sub btnViewDetailsMMJH_Click(sender As Object, e As EventArgs) Handles btnViewDetailsMMJH.Click
-        Nav.Open(Me, New Form6())
+        Nav.Open(Me, New Form456_VenueDetails("JH01"))
     End Sub
 
 End Class

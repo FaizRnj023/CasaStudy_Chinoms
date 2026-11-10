@@ -38,6 +38,8 @@ Public Class Venue
     Public Property Features As String
     Public Property ServiceStars As Integer
     Public Property CleanStars As Integer
+    Public Property PhotoResource As String
+
 End Class
 
 Public Class AddOnService
@@ -92,19 +94,22 @@ Public Module VenueData
     ' PLACEHOLDER prices/capacities - replace with the figures from your price list.
     Public ReadOnly Venues As New List(Of Venue) From {
         New Venue With {.PlaceID = "LL01", .Name = "The Liquid Lounge", .VenueType = "Indoor Lounge",
+                        .PhotoResource = "Liquid_Lounge",
                         .Address = "Street, barangay, city, province", .Capacity = 100,
                         .Tiers = New Decimal() {15000D, 25000D},
                         .EventTypes = "Birthday, Debut, Corporate Event",
                         .Features = "Sleek lighting, lounge seating, bar area",
                         .ServiceStars = 5, .CleanStars = 4},
         New Venue With {.PlaceID = "MM01", .Name = "Moonbeam Meadows", .VenueType = "Outdoor Garden",
-                        .Address = "Street, barangay, city, province", .Capacity = 200,
+                        .PhotoResource = "Moonbeam_Meadows",
+    .Address = "Street, barangay, city, province", .Capacity = 200,
                         .Tiers = New Decimal() {12000D, 18000D, 25000D, 32000D},
                         .EventTypes = "Wedding, Christening, Reunion",
                         .Features = "Open-air garden, tranquil nature setting",
                         .ServiceStars = 4, .CleanStars = 5},
         New Venue With {.PlaceID = "JH01", .Name = "Jubilee Hall", .VenueType = "Indoor Hall",
-                        .Address = "Street, barangay, city, province", .Capacity = 300,
+                        .PhotoResource = "Hall",
+    .Address = "Street, barangay, city, province", .Capacity = 300,
                         .Tiers = New Decimal() {20000D, 30000D, 40000D, 50000D, 60000D, 70000D},
                         .EventTypes = "Wedding, Debut, Corporate Event",
                         .Features = "Fairy-light canopy, large stage, air-conditioned",
@@ -413,7 +418,7 @@ Public Module UiHelpers
         Next
     End Sub
 
-    ''' <summary>Fills the venue-details pages (Form4/5/6 share the same control names).</summary>
+    ''' <summary>Fills the venue-details pages.</summary>
     Public Sub PopulateVenue(f As Form, v As Venue)
         SetText(f, "lblVenue", v.Name.ToUpper())
         SetText(f, "txtPlaceID", v.PlaceID)
@@ -427,6 +432,8 @@ Public Module UiHelpers
         SetText(f, "lblStarsSpaceAndClean", Stars(v.CleanStars))
         SetText(f, "Label4", "PRICE RANGE")
         LayoutVenueColumns(f)
+        Dim title As Control = f.Controls.Find("lblVenue", True).FirstOrDefault()
+        If title IsNot Nothing Then CenterInParent(title)
         LockTextBoxes(f)
     End Sub
 
