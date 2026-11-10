@@ -1,5 +1,3 @@
-Imports System.Net.NetworkInformation
-
 Public Class LandingPage
 
     Public Sub New()

@@ -1,8 +1,6 @@
 ﻿' Booking list (opened from "View booking details").
 ' I only had Form11.resx, not Form11.Designer.vb, so this finds the grid and back button by type/name
 ' and creates any column or control that is missing.
-Imports System.Net.NetworkInformation
-
 Public Class Form11
 
     Private grid As DataGridView

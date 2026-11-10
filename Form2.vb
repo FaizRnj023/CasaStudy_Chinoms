@@ -1,5 +1,4 @@
-﻿Imports System.Net.NetworkInformation
-Imports System.Text.RegularExpressions
+﻿Imports System.Text.RegularExpressions
 
 Public Class CustomerDetails
 

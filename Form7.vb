@@ -1,7 +1,4 @@
-﻿Imports System.Net.NetworkInformation
-Imports Windows.Win32.Graphics
-
-Public Class Form7
+﻿Public Class Form7
 
     Private ReadOnly rows As New List(Of Tuple(Of CheckBox, TextBox))
 
