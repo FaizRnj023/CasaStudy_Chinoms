@@ -190,7 +190,7 @@ Partial Class Form8
         txtEPDate.Location = New Point(1014, 94)
         txtEPDate.Margin = New Padding(5)
         txtEPDate.Name = "txtEPDate"
-        txtEPDate.Size = New Size(569, 33)
+        txtEPDate.Size = New Size(477, 33)
         txtEPDate.TabIndex = 25
         ' 
         ' txtType
@@ -199,7 +199,7 @@ Partial Class Form8
         txtType.Location = New Point(1014, 42)
         txtType.Margin = New Padding(5)
         txtType.Name = "txtType"
-        txtType.Size = New Size(569, 33)
+        txtType.Size = New Size(477, 33)
         txtType.TabIndex = 24
         ' 
         ' txtBookingID
