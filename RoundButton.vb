@@ -73,35 +73,49 @@ Public Class RoundedButton
         MyBase.OnPaintBackground(e)
         g.SmoothingMode = SmoothingMode.AntiAlias
 
-        Dim d As Integer = Math.Min(CornerRadius * 2, Math.Min(Width, Height) - 1)
-        Dim rect As New Rectangle(0, 0, Width - 1, Height - 1)
+        Dim current As Color = FillColor
+        If _pressed Then
+            current = PressedColor
+        ElseIf _hovering Then
+            current = HoverColor
+        End If
 
-        Using path As New GraphicsPath()
-            path.AddArc(rect.X, rect.Y, d, d, 180, 90)
-            path.AddArc(rect.Right - d, rect.Y, d, d, 270, 90)
-            path.AddArc(rect.Right - d, rect.Bottom - d, d, d, 0, 90)
-            path.AddArc(rect.X, rect.Bottom - d, d, d, 90, 90)
-            path.CloseFigure()
+        Dim diameter As Single = Math.Min(CornerRadius * 2.0F, Math.Min(Width, Height))
 
-            Dim current As Color = FillColor
-            If _pressed Then
-                current = PressedColor
-            ElseIf _hovering Then
-                current = HoverColor
-            End If
-
+        ' The fill covers the whole control.
+        Using path As GraphicsPath = RoundedPath(New RectangleF(0, 0, Width, Height), diameter)
             Using b As New SolidBrush(current)
                 g.FillPath(b, path)
             End Using
-
-            If BorderColor <> Color.Empty Then
-                Using p As New Pen(BorderColor, BorderThickness)
-                    g.DrawPath(p, path)
-                End Using
-            End If
         End Using
+
+        ' The border is drawn on a path inset by half its thickness,
+        ' so all four sides are exactly BorderThickness pixels wide.
+        If BorderColor <> Color.Empty AndAlso BorderThickness > 0 Then
+            Dim t As Single = BorderThickness
+            Dim inset As New RectangleF(t / 2.0F, t / 2.0F, Width - t, Height - t)
+            Using borderPath As GraphicsPath = RoundedPath(inset, Math.Max(0F, diameter - t))
+                Using p As New Pen(BorderColor, t)
+                    g.DrawPath(p, borderPath)
+                End Using
+            End Using
+        End If
 
         TextRenderer.DrawText(g, Text, Font, ClientRectangle, ForeColor,
             TextFormatFlags.HorizontalCenter Or TextFormatFlags.VerticalCenter)
     End Sub
+
+    Private Shared Function RoundedPath(r As RectangleF, d As Single) As GraphicsPath
+        Dim p As New GraphicsPath()
+        If d <= 0.5F Then
+            p.AddRectangle(r)
+        Else
+            p.AddArc(r.X, r.Y, d, d, 180, 90)
+            p.AddArc(r.Right - d, r.Y, d, d, 270, 90)
+            p.AddArc(r.Right - d, r.Bottom - d, d, d, 0, 90)
+            p.AddArc(r.X, r.Bottom - d, d, d, 90, 90)
+            p.CloseFigure()
+        End If
+        Return p
+    End Function
 End Class
