@@ -26,10 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include=".github\copilot-instructions.md" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="LogoFavicon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

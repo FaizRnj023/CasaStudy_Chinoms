@@ -41,9 +41,6 @@
     <Compile Update="RoundedPictureBox.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="RoundedTextBox.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Form5.resx">
