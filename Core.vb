@@ -239,6 +239,11 @@ Public Module AppState
         ViewOnly = False
     End Sub
 
+    ''' <summary>Next auto-generated customer ID (CUS-0001, CUS-0002, ...). One customer per booking, so this stays unique.</summary>
+    Public Function NextCustomerID() As String
+        Return "CUS-" & (Bookings.Count + 1).ToString("0000")
+    End Function
+
     Public Function CreateBooking() As Booking
         Dim b As New Booking With {
             .BookingID = "BK-" & Date.Now.ToString("yyyyMMdd") & "-" & (Bookings.Count + 1).ToString("000"),

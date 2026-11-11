@@ -14,6 +14,8 @@ Public Class CustomerDetails
         dtpEventDate.MinDate = Date.Today.AddDays(1)
 
         txtAge.ReadOnly = True
+        txtInCustomerID.ReadOnly = True   ' generated automatically, not typed in
+        txtInCustomerID.TabStop = False
         cmbEvents.DropDownStyle = ComboBoxStyle.DropDownList
         cmbEvents.DataSource = VenueData.Events.ToList()
         cmbEvents.SelectedIndex = -1
@@ -36,7 +38,7 @@ Public Class CustomerDetails
     ' ---------- invalidate the saved customer when the inputs are edited ----------
     Private Sub HookInputs(root As Control)
         For Each c As Control In root.Controls
-            If TypeOf c Is TextBox AndAlso c IsNot txtAge Then
+            If TypeOf c Is TextBox AndAlso c IsNot txtAge AndAlso c IsNot txtInCustomerID Then
                 AddHandler DirectCast(c, TextBox).TextChanged, AddressOf InputChanged
             ElseIf TypeOf c Is RadioButton Then
                 AddHandler DirectCast(c, RadioButton).CheckedChanged, AddressOf InputChanged
@@ -62,7 +64,6 @@ Public Class CustomerDetails
         Dim mobile = txtInMobile.Text.Trim
         Dim age = ComputeAge(dtpBirthday.Value)
 
-        If id = "" Then Warn("Please enter a Customer ID.", txtInCustomerID) : Return
         If name = "" Then Warn("Please enter the customer name.", txtInCustomerName) : Return
         If age < MinAge Then Warn("The customer must be at least " & MinAge & " years old.", dtpBirthday) : Return
         If Not radMale.Checked AndAlso Not radFemale.Checked Then Warn("Please select a gender.", radFemale) : Return
@@ -88,7 +89,7 @@ Public Class CustomerDetails
     End Sub
 
     Private Sub ResetForm()
-        txtInCustomerID.Clear()
+        txtInCustomerID.Text = AppState.NextCustomerID()
         txtInCustomerName.Clear()
         txtInAddress.Clear()
         txtInMobile.Clear()
@@ -104,7 +105,7 @@ Public Class CustomerDetails
         pnlCustIDName.Visible = False
         pnlEventPlaceDetails.Enabled = False
         AppState.Reset()
-        txtInCustomerID.Focus()
+        txtInCustomerName.Focus()
     End Sub
 
     ' ---------- search venue ----------
