@@ -31,6 +31,11 @@ Public Class Form9
         Dim b As Booking = AppState.Booking
         Dim payment As Decimal
 
+        If b.Status = "Paid" Then
+            MessageBox.Show("This booking has already been paid.", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Return
+        End If
+
         Select Case Pricing.CheckPayment(txtCash.Text, b.Total, payment)
             Case PaymentResult.Invalid
                 MessageBox.Show("Invalid value entered", "Payment", MessageBoxButtons.OK, MessageBoxIcon.Error)

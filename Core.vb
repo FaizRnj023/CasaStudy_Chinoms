@@ -38,8 +38,8 @@ Public Class Venue
     Public Property Features As String
     Public Property ServiceStars As Integer
     Public Property CleanStars As Integer
-    Public Property PhotoResource As String
-
+    ''' <summary>Name of the venue photo in My.Resources (Project > Properties > Resources). Empty = keep the designer's picture.</summary>
+    Public Property PhotoResource As String = ""
 End Class
 
 Public Class AddOnService
@@ -94,26 +94,26 @@ Public Module VenueData
     ' PLACEHOLDER prices/capacities - replace with the figures from your price list.
     Public ReadOnly Venues As New List(Of Venue) From {
         New Venue With {.PlaceID = "LL01", .Name = "The Liquid Lounge", .VenueType = "Indoor Lounge",
-                        .PhotoResource = "Liquid_Lounge",
-                        .Address = "Gerona, Tarlac", .Capacity = 100,
+                        .Address = "Address of The Liquid Lounge", .Capacity = 100,
                         .Tiers = New Decimal() {15000D, 25000D},
                         .EventTypes = "Birthday, Debut, Corporate Event",
                         .Features = "Sleek lighting, lounge seating, bar area",
-                        .ServiceStars = 5, .CleanStars = 4},
+                        .ServiceStars = 5, .CleanStars = 4,
+                        .PhotoResource = "LiquidLounge"},
         New Venue With {.PlaceID = "MM01", .Name = "Moonbeam Meadows", .VenueType = "Outdoor Garden",
-                        .PhotoResource = "Moonbeam_Meadows",
-                        .Address = "Camiling, Tarlac", .Capacity = 200,
+                        .Address = "Address of Moonbeam Meadows", .Capacity = 200,
                         .Tiers = New Decimal() {12000D, 18000D, 25000D, 32000D},
                         .EventTypes = "Wedding, Christening, Reunion",
                         .Features = "Open-air garden, tranquil nature setting",
-                        .ServiceStars = 4, .CleanStars = 5},
+                        .ServiceStars = 4, .CleanStars = 5,
+                        .PhotoResource = "MoonbeamMeadows"},
         New Venue With {.PlaceID = "JH01", .Name = "Jubilee Hall", .VenueType = "Indoor Hall",
-                        .PhotoResource = "Hall",
-                        .Address = "Capas, Tarlac", .Capacity = 300,
+                        .Address = "Address of Jubilee Hall", .Capacity = 300,
                         .Tiers = New Decimal() {20000D, 30000D, 40000D, 50000D, 60000D, 70000D},
                         .EventTypes = "Wedding, Debut, Corporate Event",
                         .Features = "Fairy-light canopy, large stage, air-conditioned",
-                        .ServiceStars = 5, .CleanStars = 5}
+                        .ServiceStars = 5, .CleanStars = 5,
+                        .PhotoResource = "JubileeHall"}
     }
 
     ' Max 11 services (the add-on table has 12 rows incl. header).
@@ -124,11 +124,28 @@ Public Module VenueData
         New AddOnService With {.Name = "Photo Booth", .Price = 6000D},
         New AddOnService With {.Name = "Lights & Effects", .Price = 7000D},
         New AddOnService With {.Name = "Host / Emcee", .Price = 5000D},
+        New AddOnService With {.Name = "Clown", .Price = 10000D},
+        New AddOnService With {.Name = "Singer", .Price = 7000D},
+        New AddOnService With {.Name = "Dancer", .Price = 7000D},
+        New AddOnService With {.Name = "Videoke", .Price = 1000D},
         New AddOnService With {.Name = "Decorations", .Price = 0D, .IsDecoration = True}
     }
 
     Public Function FindVenue(placeId As String) As Venue
         Return Venues.First(Function(v) v.PlaceID = placeId)
+    End Function
+
+    ''' <summary>True if the venue lists this event type in its EventTypes text.</summary>
+    Public Function SupportsEvent(v As Venue, eventName As String) As Boolean
+        If v.EventTypes Is Nothing OrElse eventName Is Nothing Then Return True
+        Return v.EventTypes.Split(","c).Any(Function(t) t.Trim().Equals(eventName, StringComparison.OrdinalIgnoreCase))
+    End Function
+
+    ''' <summary>True if another booking already holds this venue on this date (ignoreBooking = the one being edited).</summary>
+    Public Function IsVenueTaken(v As Venue, eventDate As Date, ignoreBooking As Booking) As Boolean
+        Return AppState.Bookings.Any(Function(b) b IsNot ignoreBooking AndAlso
+                                                 b.Venue.PlaceID = v.PlaceID AndAlso
+                                                 b.EventDate.Date = eventDate.Date)
     End Function
 
 End Module
@@ -208,6 +225,7 @@ Public Module Pricing
         If clean = "" Then Return PaymentResult.Invalid
         If Not Decimal.TryParse(clean, NumberStyles.Number, CultureInfo.InvariantCulture, payment) Then Return PaymentResult.Invalid
         If payment <= 0 Then Return PaymentResult.Invalid
+        If payment <> Math.Round(payment, 2) Then Return PaymentResult.Invalid   ' centavos only
         If payment < total Then Return PaymentResult.Insufficient
         Return PaymentResult.Success
     End Function
@@ -239,14 +257,27 @@ Public Module AppState
         ViewOnly = False
     End Sub
 
-    ''' <summary>Next auto-generated customer ID (CUS-0001, CUS-0002, ...). One customer per booking, so this stays unique.</summary>
+    ''' <summary>Next free customer ID (CU-001, CU-002, ...). Based on the saved bookings, so calling it repeatedly does not skip numbers.</summary>
     Public Function NextCustomerID() As String
-        Return "CUS-" & (Bookings.Count + 1).ToString("0000")
+        Dim highest As Integer = 0
+        For Each b As Booking In Bookings
+            If b.Customer Is Nothing OrElse b.Customer.CustomerID Is Nothing Then Continue For
+            Dim id As String = b.Customer.CustomerID
+            If id.StartsWith("CU-") Then
+                Dim n As Integer
+                If Integer.TryParse(id.Substring(3), n) AndAlso n > highest Then highest = n
+            End If
+        Next
+        Return "CU-" & (highest + 1).ToString("000")
     End Function
 
     Public Function CreateBooking() As Booking
+        ' If this session already made a booking that is still unpaid (user went Back from the
+        ' summary, or used "Edit details"), this new one REPLACES it and keeps its ID.
+        Dim prev As Booking = If(Booking IsNot Nothing AndAlso Booking.Status = "Pending", Booking, Nothing)
         Dim b As New Booking With {
-            .BookingID = "BK-" & Date.Now.ToString("yyyyMMdd") & "-" & (Bookings.Count + 1).ToString("000"),
+            .BookingID = If(prev IsNot Nothing, prev.BookingID,
+                            "BK-" & Date.Now.ToString("yyyyMMdd") & "-" & (Bookings.Count + 1).ToString("000")),
             .TransactionDate = Date.Now,
             .Customer = Customer,
             .EventInfo = EventInfo,
@@ -256,6 +287,11 @@ Public Module AppState
             .Status = "Pending"}
         b.Services.AddRange(Services)
         Pricing.BuildBill(b)
+
+        If prev IsNot Nothing Then
+            Dim idx As Integer = Bookings.IndexOf(prev)
+            If idx >= 0 Then Bookings(idx) = b
+        End If
         Return b
     End Function
 End Module
@@ -268,8 +304,6 @@ Public Module Nav
 
     ''' <summary>Hide the current form and show the next one (owned by the current form).</summary>
     Public Sub Open(current As Form, [next] As Form)
-        FontLoader.Apply([next])
-        UiHelpers.StandardizeWindow([next])
         AddHandler [next].FormClosed, AddressOf OnChildClosed
         current.Hide()
         [next].Show(current)
@@ -288,7 +322,7 @@ Public Module Nav
         If target Is Nothing Then Return
         target.Show()
         For Each f As Form In Application.OpenForms.Cast(Of Form)().ToList()
-            If f IsNot target AndAlso TypeOf f IsNot LandingPage Then f.Close()
+            If f IsNot target AndAlso Not TypeOf f Is LandingPage Then f.Close()
         Next
     End Sub
 
@@ -316,21 +350,28 @@ End Module
 
 Public Module UiHelpers
 
-    ''' <summary>Centres a control horizontally inside its parent.</summary>
+    ''' <summary>Same look for every window: fixed size, no maximize, opens in the middle of the screen.</summary>
+    Public Sub StandardizeWindow(f As Form)
+        f.StartPosition = FormStartPosition.CenterScreen
+        f.FormBorderStyle = FormBorderStyle.FixedSingle
+        f.MaximizeBox = False
+    End Sub
+
+    ''' <summary>Centers a control horizontally inside its parent.</summary>
     Public Sub CenterInParent(c As Control)
+        If c Is Nothing OrElse c.Parent Is Nothing Then Return
         c.Left = (c.Parent.ClientSize.Width - c.Width) \ 2
     End Sub
 
-    ''' <summary>Centres a control horizontally under/over another control with the same parent.</summary>
-    Public Sub CenterOver(c As Control, reference As Control)
-        c.Left = reference.Left + (reference.Width - c.Width) \ 2
-    End Sub
-
-    ''' <summary>Same window behaviour on every page: fixed size, no maximize, centred on screen.</summary>
-    Public Sub StandardizeWindow(f As Form)
-        f.FormBorderStyle = FormBorderStyle.FixedSingle
-        f.MaximizeBox = False
-        f.StartPosition = FormStartPosition.CenterScreen
+    ''' <summary>Centers a control horizontally over another control (e.g. a caption over its picture).</summary>
+    Public Sub CenterOver(c As Control, target As Control)
+        If c Is Nothing OrElse target Is Nothing OrElse c.Parent Is Nothing OrElse target.Parent Is Nothing Then Return
+        If c.Parent Is target.Parent Then
+            c.Left = target.Left + (target.Width - c.Width) \ 2
+        Else
+            Dim centerOnScreen As Point = target.Parent.PointToScreen(New Point(target.Left + target.Width \ 2, 0))
+            c.Left = c.Parent.PointToClient(centerOnScreen).X - c.Width \ 2
+        End If
     End Sub
 
     Public Sub SetText(f As Control, name As String, text As String)
@@ -366,10 +407,13 @@ Public Module UiHelpers
             End If
         Next
 
+        SetText(tlp, "Label26", "Price Rate")      ' was "lblPriceRate" in the designer
+        SetText(tlp, "Label28", "Surcharge")       ' was "lblSurcharge" in the designer
+
         tlp.RowStyles.Clear()
         tlp.RowCount = lines.Count + 1
         For r As Integer = 0 To lines.Count
-            tlp.RowStyles.Add(New RowStyle(SizeType.AutoSize))
+            tlp.RowStyles.Add(New RowStyle(SizeType.Absolute, 40.0F))
         Next
         tlp.AutoScroll = True
 
@@ -388,62 +432,49 @@ Public Module UiHelpers
     Private Sub AddCell(tlp As TableLayoutPanel, text As String, col As Integer, row As Integer)
         Dim lbl As New Label With {
             .AutoSize = True,
-            .UseMnemonic = False,
             .Text = text,
             .Font = FontLoader.MakeFont("Inter Display Medium", 8.0F),
             .Anchor = AnchorStyles.Left,
-            .Margin = New Padding(5, 3, 5, 3)}
+            .Margin = New Padding(5)}
         tlp.Controls.Add(lbl, col, row)
     End Sub
 
-    ''' <summary>Lays the Price / Features / Types row out as three equal columns; values wrap inside their column.</summary>
-    Private Sub LayoutVenueColumns(f As Form)
-        Dim pnl As Control = f.Controls.Find("Panel2", True).FirstOrDefault()
-        If pnl Is Nothing Then Return
-
-        Dim heads As String() = {"Label4", "Label7", "Label9"}
-        Dim values As String() = {"lblPricePerPday", "lblFeatures", "lblTypesOfEvents"}
-
-        Dim firstHead As Control = pnl.Controls.Find(heads(0), False).FirstOrDefault()
-        If firstHead Is Nothing Then Return
-
-        Dim margin As Integer = firstHead.Left
-        Dim colW As Integer = (pnl.ClientSize.Width - 4 * margin) \ 3
-
-        For i As Integer = 0 To 2
-            Dim x As Integer = margin + i * (colW + margin)
-            Dim h As Control = pnl.Controls.Find(heads(i), False).FirstOrDefault()
-            Dim v As Label = TryCast(pnl.Controls.Find(values(i), False).FirstOrDefault(), Label)
-            If h IsNot Nothing Then h.Left = x
-            If v IsNot Nothing Then
-                v.Left = x
-                v.AutoSize = True
-                v.MaximumSize = New Size(colW, 0)
-            End If
-        Next
-    End Sub
-
-    ''' <summary>Fills the venue-details pages.</summary>
+    ''' <summary>Fills the venue-details pages (Form4/5/6 share the same control names).</summary>
     Public Sub PopulateVenue(f As Form, v As Venue)
         SetText(f, "lblVenue", v.Name.ToUpper())
         SetText(f, "txtPlaceID", v.PlaceID)
         SetText(f, "txtType", v.VenueType)
         SetText(f, "txtAddress", v.Address)
         SetText(f, "txtMaxCapacity", v.Capacity.ToString() & " pax")
-        SetText(f, "lblPricePerPday", Money(v.Tiers.Min()) & " - " & Money(v.Tiers.Max()) & vbCrLf & "(per 50-pax tier)")
+        SetText(f, "lblPricePerPday", Money(v.Tiers.Min()) & " - " & Money(v.Tiers.Max()) & "  (per 50-pax tier)")
         SetText(f, "lblTypesOfEvents", v.EventTypes)
         SetText(f, "lblFeatures", v.Features)
         SetText(f, "lblStarsService", Stars(v.ServiceStars))
         SetText(f, "lblStarsSpaceAndClean", Stars(v.CleanStars))
-        SetText(f, "Label4", "PRICE RANGE")
-        LayoutVenueColumns(f)
-        Dim title As Control = f.Controls.Find("lblVenue", True).FirstOrDefault()
-        If title IsNot Nothing Then CenterInParent(title)
+        ' Label19 holds the "Recommendability" stars; shown here as the average of the two ratings.
+        SetText(f, "Label19", Stars(CInt(Math.Round((v.ServiceStars + v.CleanStars) / 2.0R, MidpointRounding.AwayFromZero))))
         LockTextBoxes(f)
     End Sub
 
     Public Sub BookVenue(f As Form, placeId As String)
         Dim v As Venue = VenueData.FindVenue(placeId)
+
+        ' 1) Same venue + same date already booked -> not allowed.
+        If VenueData.IsVenueTaken(v, AppState.EventDate, AppState.Booking) Then
+            MessageBox.Show(v.Name & " is already booked on " & AppState.EventDate.ToString("MMMM d, yyyy") &
+                            ". Please choose another venue or another date.",
+                            "Venue not available", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        ' 2) Venue is not meant for this kind of event -> ask first.
+        If AppState.EventInfo IsNot Nothing AndAlso Not VenueData.SupportsEvent(v, AppState.EventInfo.Name) Then
+            Dim m As String = v.Name & " is usually used for: " & v.EventTypes & "." & vbCrLf &
+                              "Book it for a " & AppState.EventInfo.Name & " anyway?"
+            If MessageBox.Show(m, "Event type", MessageBoxButtons.YesNo, MessageBoxIcon.Question) <> DialogResult.Yes Then Return
+        End If
+
+        ' 3) Over capacity -> surcharge warning.
         Dim sur As Decimal = Pricing.Surcharge(v, AppState.Guests)
         If sur > 0 Then
             Dim msg As String = "Your " & AppState.Guests & " guests exceed this venue's capacity of " & v.Capacity &

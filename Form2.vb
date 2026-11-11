@@ -85,6 +85,13 @@ Public Class CustomerDetails
 
     ' ---------- reset ----------
     Private Sub btnResetCustomer_Click(sender As Object, e As EventArgs) Handles btnResetCustomer.Click
+        ' If an unpaid booking was already saved to the list, resetting abandons it (otherwise it stays as an orphan).
+        Dim pending As Booking = AppState.Booking
+        If pending IsNot Nothing AndAlso pending.Status = "Pending" AndAlso AppState.Bookings.Contains(pending) Then
+            Dim msg As String = "Resetting will discard the unpaid booking " & pending.BookingID & ". Continue?"
+            If MessageBox.Show(msg, "ChiNoms Event place", MessageBoxButtons.YesNo, MessageBoxIcon.Question) <> DialogResult.Yes Then Return
+            AppState.Bookings.Remove(pending)
+        End If
         ResetForm()
     End Sub
 
