@@ -7,8 +7,16 @@
         Dim row As Integer = 1                                   ' row 0 is the header
 
         tlpAddOnServices.SuspendLayout()
+
+        ' Make sure the table has a header row + one row per service (the designer may have fewer).
+        Dim needed As Integer = VenueData.Services.Count + 1
+        Dim template As RowStyle = If(tlpAddOnServices.RowStyles.Count > 1, tlpAddOnServices.RowStyles(1), New RowStyle(SizeType.Absolute, 40.0F))
+        While tlpAddOnServices.RowStyles.Count < needed
+            tlpAddOnServices.RowStyles.Add(New RowStyle(template.SizeType, template.Height))
+        End While
+        If tlpAddOnServices.RowCount < needed Then tlpAddOnServices.RowCount = needed
+
         For Each s As AddOnService In VenueData.Services
-            If row >= tlpAddOnServices.RowCount Then Exit For    ' table has 11 service rows
 
             Dim chk As New CheckBox With {
                 .Text = s.Name, .Tag = s, .AutoSize = True, .UseMnemonic = False,

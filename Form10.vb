@@ -22,7 +22,12 @@ Public Class Form10
     ' btnBack is the "Done" button on this page.
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         If AppState.ViewOnly Then
-            Nav.Back(Me)
+            ' Just paid from the booking list: skip the (now finished) Pay/Summary forms.
+            If TypeOf Me.Owner Is Form9 Then
+                Nav.ReturnTo(Of Form11)(Me)
+            Else
+                Nav.Back(Me)
+            End If
         Else
             AppState.Reset()
             Nav.GoHome()
