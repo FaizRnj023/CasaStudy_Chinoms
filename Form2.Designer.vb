@@ -24,6 +24,8 @@ Partial Class CustomerDetails
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CustomerDetails))
         pnlCustDetails = New Panel()
+        btnResetCustomer = New RoundedButton()
+        btnSaveCustomer = New RoundedButton()
         dtpBirthday = New DateTimePicker()
         radMale = New RadioButton()
         radFemale = New RadioButton()
@@ -41,6 +43,7 @@ Partial Class CustomerDetails
         txtInCustomerName = New TextBox()
         txtInCustomerID = New TextBox()
         pnlEventPlaceDetails = New Panel()
+        btnSearchVenue = New RoundedButton()
         dtpEventDate = New DateTimePicker()
         pnlCustIDName = New Panel()
         Label9 = New Label()
@@ -61,6 +64,8 @@ Partial Class CustomerDetails
         ' pnlCustDetails
         ' 
         pnlCustDetails.BackColor = Color.Transparent
+        pnlCustDetails.Controls.Add(btnResetCustomer)
+        pnlCustDetails.Controls.Add(btnSaveCustomer)
         pnlCustDetails.Controls.Add(dtpBirthday)
         pnlCustDetails.Controls.Add(radMale)
         pnlCustDetails.Controls.Add(radFemale)
@@ -84,6 +89,48 @@ Partial Class CustomerDetails
         pnlCustDetails.Size = New Size(771, 854)
         pnlCustDetails.TabIndex = 0
         ' 
+        ' btnResetCustomer
+        ' 
+        btnResetCustomer.BackColor = Color.Transparent
+        btnResetCustomer.BorderColor = Color.MidnightBlue
+        btnResetCustomer.BorderThickness = 2
+        btnResetCustomer.CornerRadius = 12
+        btnResetCustomer.FillColor = Color.Transparent
+        btnResetCustomer.FlatAppearance.BorderSize = 0
+        btnResetCustomer.FlatStyle = FlatStyle.Flat
+        btnResetCustomer.Font = New Font("Inter Display", 8.0F, FontStyle.Bold)
+        btnResetCustomer.ForeColor = Color.MidnightBlue
+        btnResetCustomer.HoverColor = Color.FromArgb(CByte(242), CByte(242), CByte(247))
+        btnResetCustomer.ImeMode = ImeMode.NoControl
+        btnResetCustomer.Location = New Point(137, 759)
+        btnResetCustomer.Name = "btnResetCustomer"
+        btnResetCustomer.PressedColor = Color.FromArgb(CByte(225), CByte(225), CByte(235))
+        btnResetCustomer.Size = New Size(233, 61)
+        btnResetCustomer.TabIndex = 77
+        btnResetCustomer.Text = "Reset details"
+        btnResetCustomer.UseVisualStyleBackColor = False
+        ' 
+        ' btnSaveCustomer
+        ' 
+        btnSaveCustomer.BackColor = Color.Transparent
+        btnSaveCustomer.BorderColor = Color.Empty
+        btnSaveCustomer.BorderThickness = 2
+        btnSaveCustomer.CornerRadius = 12
+        btnSaveCustomer.FillColor = Color.MidnightBlue
+        btnSaveCustomer.FlatAppearance.BorderSize = 0
+        btnSaveCustomer.FlatStyle = FlatStyle.Flat
+        btnSaveCustomer.Font = New Font("Inter Display", 8.0F, FontStyle.Bold)
+        btnSaveCustomer.ForeColor = Color.White
+        btnSaveCustomer.HoverColor = Color.FromArgb(CByte(45), CByte(45), CByte(140))
+        btnSaveCustomer.ImeMode = ImeMode.NoControl
+        btnSaveCustomer.Location = New Point(383, 759)
+        btnSaveCustomer.Name = "btnSaveCustomer"
+        btnSaveCustomer.PressedColor = Color.FromArgb(CByte(15), CByte(15), CByte(80))
+        btnSaveCustomer.Size = New Size(233, 61)
+        btnSaveCustomer.TabIndex = 76
+        btnSaveCustomer.Text = "Save and Proceed"
+        btnSaveCustomer.UseVisualStyleBackColor = False
+        ' 
         ' dtpBirthday
         ' 
         dtpBirthday.CalendarFont = New Font("Inter Display Medium", 8.0F)
@@ -91,7 +138,7 @@ Partial Class CustomerDetails
         dtpBirthday.Location = New Point(44, 315)
         dtpBirthday.Margin = New Padding(0)
         dtpBirthday.Name = "dtpBirthday"
-        dtpBirthday.Size = New Size(460, 32)
+        dtpBirthday.Size = New Size(460, 33)
         dtpBirthday.TabIndex = 2
         dtpBirthday.Value = New Date(2026, 12, 2, 0, 0, 0, 0)
         ' 
@@ -103,7 +150,7 @@ Partial Class CustomerDetails
         radMale.Location = New Point(193, 412)
         radMale.Margin = New Padding(5)
         radMale.Name = "radMale"
-        radMale.Size = New Size(90, 30)
+        radMale.Size = New Size(91, 30)
         radMale.TabIndex = 5
         radMale.Text = "Male"
         radMale.UseVisualStyleBackColor = False
@@ -116,7 +163,7 @@ Partial Class CustomerDetails
         radFemale.Location = New Point(44, 412)
         radFemale.Margin = New Padding(5)
         radFemale.Name = "radFemale"
-        radFemale.Size = New Size(116, 30)
+        radFemale.Size = New Size(115, 30)
         radFemale.TabIndex = 4
         radFemale.Text = "Female"
         radFemale.UseVisualStyleBackColor = False
@@ -125,10 +172,10 @@ Partial Class CustomerDetails
         ' 
         Label10.AutoSize = True
         Label10.Font = New Font("Cinzel Black", 10.0F)
-        Label10.Location = New Point(245, 26)
+        Label10.Location = New Point(244, 26)
         Label10.Margin = New Padding(5, 0, 5, 0)
         Label10.Name = "Label10"
-        Label10.Size = New Size(239, 31)
+        Label10.Size = New Size(281, 36)
         Label10.TabIndex = 17
         Label10.Text = "Customer Details"
         ' 
@@ -139,7 +186,7 @@ Partial Class CustomerDetails
         Label7.Location = New Point(44, 570)
         Label7.Margin = New Padding(5, 0, 5, 0)
         Label7.Name = "Label7"
-        Label7.Size = New Size(122, 26)
+        Label7.Size = New Size(121, 26)
         Label7.TabIndex = 16
         Label7.Text = "Mobile No.:"
         ' 
@@ -150,7 +197,7 @@ Partial Class CustomerDetails
         Label6.Location = New Point(44, 471)
         Label6.Margin = New Padding(5, 0, 5, 0)
         Label6.Name = "Label6"
-        Label6.Size = New Size(98, 26)
+        Label6.Size = New Size(99, 26)
         Label6.TabIndex = 15
         Label6.Text = "Address:"
         ' 
@@ -161,7 +208,7 @@ Partial Class CustomerDetails
         Label5.Location = New Point(44, 374)
         Label5.Margin = New Padding(5, 0, 5, 0)
         Label5.Name = "Label5"
-        Label5.Size = New Size(84, 26)
+        Label5.Size = New Size(89, 26)
         Label5.TabIndex = 14
         Label5.Text = "Gender:"
         ' 
@@ -194,7 +241,7 @@ Partial Class CustomerDetails
         Label2.Location = New Point(44, 183)
         Label2.Margin = New Padding(5, 0, 5, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(178, 26)
+        Label2.Size = New Size(177, 26)
         Label2.TabIndex = 11
         Label2.Text = "Customer Name:"
         ' 
@@ -205,7 +252,7 @@ Partial Class CustomerDetails
         Label1.Location = New Point(44, 88)
         Label1.Margin = New Padding(5, 0, 5, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(141, 26)
+        Label1.Size = New Size(138, 26)
         Label1.TabIndex = 10
         Label1.Text = "Customer ID:"
         ' 
@@ -215,7 +262,7 @@ Partial Class CustomerDetails
         txtInMobile.Location = New Point(44, 602)
         txtInMobile.Margin = New Padding(5)
         txtInMobile.Name = "txtInMobile"
-        txtInMobile.Size = New Size(682, 32)
+        txtInMobile.Size = New Size(682, 33)
         txtInMobile.TabIndex = 7
         ' 
         ' txtInAddress
@@ -224,7 +271,7 @@ Partial Class CustomerDetails
         txtInAddress.Location = New Point(44, 504)
         txtInAddress.Margin = New Padding(5)
         txtInAddress.Name = "txtInAddress"
-        txtInAddress.Size = New Size(682, 32)
+        txtInAddress.Size = New Size(682, 33)
         txtInAddress.TabIndex = 6
         ' 
         ' txtAge
@@ -233,7 +280,7 @@ Partial Class CustomerDetails
         txtAge.Location = New Point(520, 315)
         txtAge.Margin = New Padding(5)
         txtAge.Name = "txtAge"
-        txtAge.Size = New Size(206, 32)
+        txtAge.Size = New Size(206, 33)
         txtAge.TabIndex = 3
         ' 
         ' txtInCustomerName
@@ -242,7 +289,7 @@ Partial Class CustomerDetails
         txtInCustomerName.Location = New Point(44, 216)
         txtInCustomerName.Margin = New Padding(5)
         txtInCustomerName.Name = "txtInCustomerName"
-        txtInCustomerName.Size = New Size(682, 32)
+        txtInCustomerName.Size = New Size(682, 33)
         txtInCustomerName.TabIndex = 1
         ' 
         ' txtInCustomerID
@@ -251,12 +298,13 @@ Partial Class CustomerDetails
         txtInCustomerID.Location = New Point(44, 121)
         txtInCustomerID.Margin = New Padding(5)
         txtInCustomerID.Name = "txtInCustomerID"
-        txtInCustomerID.Size = New Size(682, 32)
+        txtInCustomerID.Size = New Size(682, 33)
         txtInCustomerID.TabIndex = 0
         ' 
         ' pnlEventPlaceDetails
         ' 
         pnlEventPlaceDetails.BackColor = Color.Transparent
+        pnlEventPlaceDetails.Controls.Add(btnSearchVenue)
         pnlEventPlaceDetails.Controls.Add(dtpEventDate)
         pnlEventPlaceDetails.Controls.Add(pnlCustIDName)
         pnlEventPlaceDetails.Controls.Add(Label15)
@@ -271,6 +319,27 @@ Partial Class CustomerDetails
         pnlEventPlaceDetails.Size = New Size(771, 854)
         pnlEventPlaceDetails.TabIndex = 1
         ' 
+        ' btnSearchVenue
+        ' 
+        btnSearchVenue.BackColor = Color.Transparent
+        btnSearchVenue.BorderColor = Color.Empty
+        btnSearchVenue.BorderThickness = 2
+        btnSearchVenue.CornerRadius = 12
+        btnSearchVenue.FillColor = Color.MidnightBlue
+        btnSearchVenue.FlatAppearance.BorderSize = 0
+        btnSearchVenue.FlatStyle = FlatStyle.Flat
+        btnSearchVenue.Font = New Font("Inter Display", 8.0F, FontStyle.Bold)
+        btnSearchVenue.ForeColor = Color.White
+        btnSearchVenue.HoverColor = Color.FromArgb(CByte(45), CByte(45), CByte(140))
+        btnSearchVenue.ImeMode = ImeMode.NoControl
+        btnSearchVenue.Location = New Point(274, 759)
+        btnSearchVenue.Name = "btnSearchVenue"
+        btnSearchVenue.PressedColor = Color.FromArgb(CByte(15), CByte(15), CByte(80))
+        btnSearchVenue.Size = New Size(233, 61)
+        btnSearchVenue.TabIndex = 78
+        btnSearchVenue.Text = "Search Venue"
+        btnSearchVenue.UseVisualStyleBackColor = False
+        ' 
         ' dtpEventDate
         ' 
         dtpEventDate.CalendarFont = New Font("Inter Display Medium", 8.0F)
@@ -278,13 +347,13 @@ Partial Class CustomerDetails
         dtpEventDate.Location = New Point(44, 501)
         dtpEventDate.Margin = New Padding(0)
         dtpEventDate.Name = "dtpEventDate"
-        dtpEventDate.Size = New Size(682, 32)
+        dtpEventDate.Size = New Size(682, 33)
         dtpEventDate.TabIndex = 24
         dtpEventDate.Value = New Date(2026, 12, 2, 0, 0, 0, 0)
         ' 
         ' pnlCustIDName
         ' 
-        pnlCustIDName.BackColor = Color.FromArgb(239, 227, 203)
+        pnlCustIDName.BackColor = Color.FromArgb(CByte(239), CByte(227), CByte(203))
         pnlCustIDName.Controls.Add(Label9)
         pnlCustIDName.Controls.Add(Label8)
         pnlCustIDName.Controls.Add(txtOutCustomerID)
@@ -301,7 +370,7 @@ Partial Class CustomerDetails
         Label9.Location = New Point(29, 102)
         Label9.Margin = New Padding(5, 0, 5, 0)
         Label9.Name = "Label9"
-        Label9.Size = New Size(178, 26)
+        Label9.Size = New Size(177, 26)
         Label9.TabIndex = 21
         Label9.Text = "Customer Name:"
         ' 
@@ -312,30 +381,30 @@ Partial Class CustomerDetails
         Label8.Location = New Point(29, 40)
         Label8.Margin = New Padding(5, 0, 5, 0)
         Label8.Name = "Label8"
-        Label8.Size = New Size(181, 26)
+        Label8.Size = New Size(138, 26)
         Label8.TabIndex = 20
         Label8.Text = "Customer ID:"
         ' 
         ' txtOutCustomerID
         ' 
-        txtOutCustomerID.BackColor = Color.FromArgb(239, 227, 203)
+        txtOutCustomerID.BackColor = Color.FromArgb(CByte(239), CByte(227), CByte(203))
         txtOutCustomerID.BorderStyle = BorderStyle.None
         txtOutCustomerID.Font = New Font("Inter Display Medium", 8.0F)
         txtOutCustomerID.Location = New Point(236, 40)
         txtOutCustomerID.Margin = New Padding(5)
         txtOutCustomerID.Name = "txtOutCustomerID"
-        txtOutCustomerID.Size = New Size(403, 25)
+        txtOutCustomerID.Size = New Size(403, 26)
         txtOutCustomerID.TabIndex = 22
         ' 
         ' txtOutCustomerName
         ' 
-        txtOutCustomerName.BackColor = Color.FromArgb(239, 227, 203)
+        txtOutCustomerName.BackColor = Color.FromArgb(CByte(239), CByte(227), CByte(203))
         txtOutCustomerName.BorderStyle = BorderStyle.None
         txtOutCustomerName.Font = New Font("Inter Display Medium", 8.0F)
         txtOutCustomerName.Location = New Point(236, 102)
         txtOutCustomerName.Margin = New Padding(5)
         txtOutCustomerName.Name = "txtOutCustomerName"
-        txtOutCustomerName.Size = New Size(403, 25)
+        txtOutCustomerName.Size = New Size(403, 26)
         txtOutCustomerName.TabIndex = 23
         ' 
         ' Label15
@@ -345,7 +414,7 @@ Partial Class CustomerDetails
         Label15.Location = New Point(44, 468)
         Label15.Margin = New Padding(5, 0, 5, 0)
         Label15.Name = "Label15"
-        Label15.Size = New Size(119, 30)
+        Label15.Size = New Size(124, 26)
         Label15.TabIndex = 25
         Label15.Text = "Event Date:"
         ' 
@@ -356,7 +425,7 @@ Partial Class CustomerDetails
         Label14.Location = New Point(44, 383)
         Label14.Margin = New Padding(5, 0, 5, 0)
         Label14.Name = "Label14"
-        Label14.Size = New Size(187, 30)
+        Label14.Size = New Size(194, 26)
         Label14.TabIndex = 24
         Label14.Text = "Number of Guests:"
         ' 
@@ -367,7 +436,7 @@ Partial Class CustomerDetails
         Label12.Location = New Point(44, 298)
         Label12.Margin = New Padding(5, 0, 5, 0)
         Label12.Name = "Label12"
-        Label12.Size = New Size(69, 30)
+        Label12.Size = New Size(73, 26)
         Label12.TabIndex = 22
         Label12.Text = "Event:"
         ' 
@@ -375,10 +444,10 @@ Partial Class CustomerDetails
         ' 
         Label13.AutoSize = True
         Label13.Font = New Font("Cinzel Black", 10.0F)
-        Label13.Location = New Point(225, 26)
+        Label13.Location = New Point(229, 26)
         Label13.Margin = New Padding(5, 0, 5, 0)
         Label13.Name = "Label13"
-        Label13.Size = New Size(275, 31)
+        Label13.Size = New Size(317, 36)
         Label13.TabIndex = 18
         Label13.Text = "Find an Event Place"
         ' 
@@ -398,12 +467,12 @@ Partial Class CustomerDetails
         txtInGuestCount.Location = New Point(44, 415)
         txtInGuestCount.Margin = New Padding(5)
         txtInGuestCount.Name = "txtInGuestCount"
-        txtInGuestCount.Size = New Size(682, 32)
+        txtInGuestCount.Size = New Size(682, 33)
         txtInGuestCount.TabIndex = 13
         ' 
         ' CustomerDetails
         ' 
-        AutoScaleDimensions = New SizeF(192F, 192F)
+        AutoScaleDimensions = New SizeF(192.0F, 192.0F)
         AutoScaleMode = AutoScaleMode.Dpi
         BackColor = SystemColors.Control
         BackgroundImage = My.Resources.Resources.BG___Form2
